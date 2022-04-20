@@ -52,7 +52,7 @@ module.exports =  function grid( req, res ) {
 
         //console.log("here urlOby", urlObj);
 
-        return res.render('v1/home-new', { urlObj } );
+        return res.render('v1/home-base', { urlObj } );
 
 
 
