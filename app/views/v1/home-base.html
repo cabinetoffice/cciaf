@@ -1,0 +1,125 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    {{ urlObj.title|safe }} &raquo; Grants Applicant Programme
+{% endblock %}
+
+
+
+{% block bodyStart %}
+
+
+    {#{% include './partials/cookies-banner.njk' %}#}
+
+
+    {{ govukSkipLink({
+        href: '#gap_home-skip-to',
+        text: 'Skip to main content'
+    }) }}
+
+{% endblock %}
+
+    {#{% block skipLink %}#}
+        {##}
+    {#{% endblock %}#}
+
+{% block header %}
+    {#{% include "../includes/gap/header-nav.njk" %}#}
+
+    {{ govukHeader(
+        {
+            homepageUrl: "/ghjgjh",
+            serviceName: serviceName,
+            serviceUrl: "#",
+            containerClasses: "govuk-width-container",
+            navigation: [
+            { href: "#1", text: "Home", active: false },
+            { href: "#2", text: "My assessments", active: false },
+            { href: "#3", text: "Help and support", active: false },
+            { href: "#4", text: "Sign in / create an account", active: false }
+        ]
+        }
+    ) }}
+
+
+    <div class="app-width-container">
+        <div class="govuk-width-container">
+            {% include "./partials/phase-banner.njk" %}
+        </div>
+
+
+
+
+
+        {% if urlObj.url === 'home3-descoped' %}
+            {% include "./partials/top-navigation-descoped.njk" %}
+        {% else %}
+            {#{% include "./partials/top-navigation.njk" %}#}
+            {#{% include "./partials/top-navigation-mobile.njk" %}#}
+        {% endif %}
+
+    </div>
+
+{% endblock %}
+
+{% block beforeContent %}
+
+    {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+    {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{% endblock %}
+
+{% block content %}
+
+    {% if urlObj.backLink.show %}
+        {{ govukBackLink({
+            text: urlObj.backLinkText,
+            href: "/v2/grants/schemes/landing-detail"
+        }) }}
+    {% endif %}
+
+
+    {% if urlObj.url === 'links' %}
+        {% include "./base/links.njk" %}
+
+        {% elif urlObj.url === 'home4' %}
+        {% include "./base/home4.njk" %}
+
+        {#{% elif urlObj.url === 'home3' %}#}
+        {#{% include "./base/home3-no-community-news.njk" %}#}
+
+        {% elif urlObj.url === 'home3-no-search-or-notifications' %}
+        {% include "./base/home3-no-search.njk" %}
+
+        {% elif urlObj.url === 'home3-descoped' %}
+        {% include "./base/home3-descoped.njk" %}
+
+        {% elif urlObj.url === 'cookies' %}
+        {% include "./base/cookies.njk" %}
+
+        {% elif urlObj.url === 'accessibility' %}
+        {% include "./base/accessibility.njk" %}
+
+        {% elif urlObj.url === 'terms-and-conditions' %}
+        {% include "./base/terms-and-conditions.njk" %}
+
+        {% elif urlObj.url === 'about-find-a-grant' %}
+        {% include "./base/about-find-a-grant.njk" %}
+
+        {% elif urlObj.url === 'privacy' %}
+        {% include "./base/privacy.njk" %}
+
+        {% elif urlObj.url === 'sign-in' %}
+        {% include "./base/sign-in.njk" %}
+
+        {% elif urlObj.url === 'register' %}
+        {% include "./base/register.njk" %}
+
+        {% elif urlObj.url === 'password-reset' %}
+        {% include "./base/password-reset.njk" %}
+
+    {% endif %}
+
+
+{% endblock %}
