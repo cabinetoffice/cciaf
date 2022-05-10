@@ -1,0 +1,665 @@
+<div class="govuk-grid-row">
+
+
+    <style>
+        .s4_nav-test {
+            display: flex;
+            line-height: 30px;
+            margin-bottom: 6px;
+        }
+
+        .s4_nav-link-test {
+            padding-left: 14px;
+            display: flex;
+            flex: 1;
+        }
+
+        .s4_nav-link-test--active {
+            margin-right: -12px;
+        }
+
+        .s4_active-test {
+            font-weight: 600;
+            text-decoration: none;
+            color: #000 !important;
+            list-style-type: none;
+            border-left: 5px solid #1d70b8;
+            display: flex;
+            /*margin-left: -20px;*/
+            padding-left: 14px;
+            background-color: #e3edff;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            flex: 1;
+        }
+
+        .s4_table-head {
+            background-color: #f7f7f7;
+            border: 1px solid #dadada;
+            border-bottom: 2px solid #000;
+        }
+    </style>
+
+
+    <nav class="govuk-grid-column-one-quarter" style="width: 20%;">
+        <div class="" style="border-bottom: 4px solid #000000;display: flex;">
+            <img src="/public/images/menu-24.png" alt="" style="display: inline-flex;">
+            <span class="govuk-body govuk-!-font-weight-bold" style="display: inline-flex;">Types of check</span>
+
+        </div>
+
+        <ul class="" style="display: flex;list-style: none;padding-left: 0;flex-direction: column;">
+
+            <li class="s4_nav-test s4_nav-link-test--active"><a class="s4_active-test" href="#" style="clip-path: polygon(0% 0%, 95% 0%, 100% 50%, 95% 100%, 0% 100%);">Current topic</a>
+            </li>
+
+
+            <li class="s4_nav-test"><a class="s4_nav-link-test" href="#">One subtopics</a></li>
+            <li class="s4_nav-test"><a class="s4_nav-link-test" href="#">Another menu item</a></li>
+            <li class="s4_nav-test"><a class="s4_nav-link-test" href="#">More linking</a></li>
+            <li class="s4_nav-test"><a class="s4_nav-link-test" href="#">Final category</a></li>
+
+
+        </ul>
+    </nav>
+
+
+    <!-- START: RHS CONTENT @80% -->
+    <div class="govuk-!-margin-bottom-9 govuk-grid-column-three-quarters" style="width: 80%;">
+
+        <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m">Test: Practice Area Summary</caption>
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Practice area</th>
+                <th scope="col" class="govuk-table__header" width="33%">Is your organisation submitting an assessment for this Practice Area?</th>
+                <th scope="col" class="govuk-table__header" width="7%">Rating</th>
+                <th scope="col" class="govuk-table__header" width="7%">Score</th>
+            </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+            <!-- START: 5.1 -->
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">5.1 Contract mobilisation and transition</td>
+                <td class="govuk-table__cell">
+                    <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="contract_yes" name="practice_area_5_1" type="radio" value="contract">
+                            <label class="govuk-label govuk-radios__label" for="contract_yes">
+                                Yes
+                            </label>
+                        </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="contract_no" name="practice_area_5_1" type="radio" value="year">
+                        <label class="govuk-label govuk-radios__label" for="contract_no">
+                            No
+                        </label>
+                    </div>
+                </div>
+                </td>
+                <td class="govuk-table__cell" style="font-weight: 600; color: #005a30;">BEST</td>
+                <td class="govuk-table__cell">88%</td>
+            </tr>
+            <!-- END: 5.1 -->
+
+            <!-- START: 5.2 -->
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><span class="" style="font-weight: 600;margin-right: 8px;">5.2</span> Managing delivery and performance</td>
+                <td class="govuk-table__cell">
+                    <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="changed-name" name="practice_area_5_2" type="radio" value="month">
+                            <label class="govuk-label govuk-radios__label" for="changed-name">
+                                Yes
+                            </label>
+                        </div>
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="changed-name-2" name="practice_area_5_2" type="radio" value="year">
+                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                        No
+                    </label>
+                </div>
+            </div>
+                </td>
+                <td class="govuk-table__cell" style="font-weight: 600;">GOOD</td>
+                <td class="govuk-table__cell">88%</td>
+            </tr>
+            <!-- END: 5.2 -->
+
+            <!-- START: 5.3 -->
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">5.3 Managing contract risk</td>
+                <td class="govuk-table__cell">
+                    <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="changed-name" name="practice_area_5_3" type="radio" value="month">
+                    <label class="govuk-label govuk-radios__label" for="changed-name">
+                        Yes
+                    </label>
+                </div>
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="changed-name-2" name="practice_area_5_3" type="radio" value="year">
+                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                        No
+                    </label>
+                </div>
+            </div>
+                </td>
+                <td class="govuk-table__cell" style="font-weight: 600;color: #1d70b8;">BETTER</td>
+                <td class="govuk-table__cell">88%</td>
+            </tr>
+            <!-- END: 5.3 -->
+
+            <!-- START: 5.4 -->
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><span class="" style="font-weight: 600;margin-right: 8px;">7.4</span> Data systems and performance management, GS1 and patient level costing (NHS Only)</td>
+                <td class="govuk-table__cell">
+                    <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="changed-name" name="practice_area_5_4" type="radio" value="month">
+                            <label class="govuk-label govuk-radios__label" for="changed-name">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="changed-name-2" name="practice_area_5_4" type="radio" value="year">
+                            <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </td>
+                <td class="govuk-table__cell" style="font-weight: 600;color: #d4351c;">TO DO</td>
+                <td class="govuk-table__cell">88%</td>
+            </tr>
+            <!-- END: 5.4 -->
+
+            <!-- START: 5.5 -->
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">5.5 Supply chain, logistics (NHS Only)</td>
+                <td class="govuk-table__cell">
+                    <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="changed-name" name="practice_area_5_5" type="radio" value="month">
+                            <label class="govuk-label govuk-radios__label" for="changed-name">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="changed-name-2" name="practice_area_5_5" type="radio" value="year">
+                            <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </td>
+                <td class="govuk-table__cell" style="font-weight: 600;">- - - - -</td>
+                <td class="govuk-table__cell">88%</td>
+            </tr>
+            <!-- END: 5.5 -->
+            </tbody>
+        </table>
+
+
+        <table class="govuk-table govuk-!-margin-top-9">
+            <caption class="govuk-table__caption govuk-table__caption--m">Test: Practice Area Summary</caption>
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Practice area</th>
+                <th scope="col" class="govuk-table__header" width="33%">Is your organisation submitting an assessment for this Practice Area?</th>
+                <th scope="col" class="govuk-table__header" width="7%">Rating</th>
+                <th scope="col" class="govuk-table__header" width="7%">Score</th>
+            </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+            <!-- START: 5.1 -->
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">5.1 Contract mobilisation and transition</td>
+                <td class="govuk-table__cell">
+                    <div class="govuk-form-group">
+                        {#<label class="govuk-label" for="sort">#}
+                        {#Sort by#}
+                        {#</label>#}
+                        <select class="govuk-select" id="sort" name="sort">
+                            <option value="updated" selected>Please select</option>
+                            <option value="views">Yes</option>
+                            <option value="comments">No</option>
+                        </select>
+                    </div>
+                </td>
+                <td class="govuk-table__cell" style="font-weight: 600; color: #005a30;">BEST</td>
+                <td class="govuk-table__cell">88%</td>
+            </tr>
+            <!-- END: 5.1 -->
+
+            <!-- START: 5.2 -->
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><span class="" style="font-weight: 600;margin-right: 8px;">5.2</span> Managing delivery and performance</td>
+                <td class="govuk-table__cell">
+                    <div class="govuk-form-group">
+                        {#<label class="govuk-label" for="sort">#}
+                        {#Sort by#}
+                        {#</label>#}
+                        <select class="govuk-select" id="sort" name="sort">
+                            <option value="updated" selected>Please select</option>
+                            <option value="views">Yes</option>
+                            <option value="comments">No</option>
+                        </select>
+                    </div>
+                </td>
+                <td class="govuk-table__cell" style="font-weight: 600;">GOOD</td>
+                <td class="govuk-table__cell">88%</td>
+            </tr>
+            <!-- END: 5.2 -->
+
+            <!-- START: 5.3 -->
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">5.3 Managing contract risk</td>
+                <td class="govuk-table__cell">
+                    <div class="govuk-form-group">
+                        {#<label class="govuk-label" for="sort">#}
+                        {#Sort by#}
+                        {#</label>#}
+                        <select class="govuk-select" id="sort" name="sort">
+                            <option value="updated" selected>Please select</option>
+                            <option value="views">Yes</option>
+                            <option value="comments">No</option>
+                        </select>
+                    </div>
+                </td>
+                <td class="govuk-table__cell" style="font-weight: 600;color: #1d70b8;">BETTER</td>
+                <td class="govuk-table__cell">88%</td>
+            </tr>
+            <!-- END: 5.3 -->
+
+            <!-- START: 5.4 -->
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><span class="" style="font-weight: 600;margin-right: 8px;">7.4</span> Data systems and performance management, GS1 and patient level costing (NHS Only)</td>
+                <td class="govuk-table__cell">
+                    <div class="govuk-form-group">
+                        {#<label class="govuk-label" for="sort">#}
+                        {#Sort by#}
+                        {#</label>#}
+                        <select class="govuk-select" id="sort" name="sort">
+                            <option value="updated" selected>Please select</option>
+                            <option value="views">Yes</option>
+                            <option value="comments">No</option>
+                        </select>
+                    </div>
+                </td>
+                <td class="govuk-table__cell" style="font-weight: 600;color: #d4351c;">TO DO</td>
+                <td class="govuk-table__cell">88%</td>
+            </tr>
+            <!-- END: 5.4 -->
+
+            <!-- START: 5.5 -->
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">5.5 Supply chain, logistics (NHS Only)</td>
+                <td class="govuk-table__cell">
+                    <div class="govuk-form-group">
+                        {#<label class="govuk-label" for="sort">#}
+                            {#Sort by#}
+                        {#</label>#}
+                        <select class="govuk-select" id="sort" name="sort">
+                            <option value="updated" selected>Please select</option>
+                            <option value="views">Yes</option>
+                            <option value="comments">No</option>
+                        </select>
+                    </div>
+                </td>
+                <td class="govuk-table__cell" style="font-weight: 600;">- - - - -</td>
+                <td class="govuk-table__cell">88%</td>
+            </tr>
+            <!-- END: 5.5 -->
+            </tbody>
+        </table>
+
+
+
+        <!-- START: OTHER TABLES -->
+
+        <div class="">
+            <ol class="app-task-list">
+                <!-- START: THEME 1 -->
+                <li>
+                    <h2 class="app-task-list__section">
+                        <span class="app-task-list__section-number">Theme 1 - Commercial Lifecycle Procure: procurement and contracting</span>
+                    </h2>
+                    <ul class="app-task-list__items">
+                        <li class="app-task-list__item">
+                    <span class="">
+                        <a href="#" aria-describedby="eligibility-status">
+                            1.1 - Overall commercial strategy and plan
+                        </a>
+                    </span>
+                            <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+                        </li>
+
+                        <li class="app-task-list__item">
+                    <span class="">
+                        <a href="#" aria-describedby="eligibility-status">
+                            1.2 - Commercial pipeline and planning
+                        </a>
+                    </span>
+                            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">NOT STARTED</strong>
+                        </li>
+
+                        <li class="app-task-list__item">
+                    <span class="">
+                        <a href="#" aria-describedby="eligibility-status">
+                            1.3 - Commercial governance and management framework
+                        </a>
+                    </span>
+                            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">NOT STARTED</strong>
+                        </li>
+
+                        <li class="app-task-list__item">
+                    <span class="">
+                        <a href="#" aria-describedby="eligibility-status">
+                            1.4 - Commercial leadership and senior ownership
+                        </a>
+                    </span>
+                            <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+                        </li>
+
+                        <li class="app-task-list__item">
+                    <span class="">
+                        <a href="#" aria-describedby="eligibility-status">
+                            1.5 - Working with partners (Wider public sector only)
+                        </a>
+                    </span>
+                            <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+                        </li>
+
+
+                    </ul>
+                </li>
+                <!-- END: THEME 1 -->
+
+                <!-- START: THEME 2 -->
+                <li>
+                    <h2 class="app-task-list__section">
+                        <span class="app-task-list__section-number">2. </span> Commercial Capability and Resourcing
+                    </h2>
+                    <ul class="app-task-list__items">
+                        <li class="app-task-list__item">
+                    <span class="">
+                        <a href="#" aria-describedby="eligibility-status">
+                            2.1 - Improving commercial capability
+                        </a>
+                    </span>
+                            <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+                        </li>
+
+                        <li class="app-task-list__item">
+                    <span class="">
+                        <a href="#" aria-describedby="eligibility-status">
+                            2.2 - Commercial resourcing and operating model
+                        </a>
+                    </span>
+                            <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+                        </li>
+
+                        <li class="app-task-list__item">
+                    <span class="">
+                        <a href="#" aria-describedby="eligibility-status">
+                            2.3 - Contract management competency
+                        </a>
+                    </span>
+                            <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+                        </li>
+
+
+                    </ul>
+                </li>
+                <!-- END: THEME 2 -->
+
+                <!-- START: THEME 3 -->
+                <li>
+                    <h2 class="app-task-list__section">
+                        <span class="app-task-list__section-number">Theme 3 - Commercial Lifecycle Define: pre-procurement </span>
+                    </h2>
+                    <ul class="app-task-list__items">
+                        <li class="app-task-list__item">
+                    <span class="">
+                        <a href="#" aria-describedby="eligibility-status">
+                            3.1 - Shaping and defining the business need
+                        </a>
+                    </span>
+                            <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+                        </li>
+
+                        <li class="app-task-list__item">
+                    <span class="">
+                        <a href="#" aria-describedby="eligibility-status">
+                            3.2 - Supply market analysis and early market engagement
+                        </a>
+                    </span>
+                            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">NOT STARTED</strong>
+                        </li>
+
+                        <li class="app-task-list__item">
+                    <span class="">
+                        <a href="#" aria-describedby="eligibility-status">
+                            3.3 - Developing and analysing commercial options
+                        </a>
+                    </span>
+                            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="eligibility-status">IN PROGRESS</strong>
+                        </li>
+                    </ul>
+                </li>
+                <!-- END: THEME 3 -->
+
+                <!-- START: THEME 4 -->
+                <li>
+                    <h2 class="app-task-list__section">
+                        <span class="app-task-list__section-number">4. </span> Commercial Lifecycle Procure: procurement and contracting
+                    </h2>
+                    <ul class="app-task-list__items">
+                        <li class="app-task-list__item">
+                    <span class="">
+                        <a href="#" aria-describedby="eligibility-status">
+                            4.1 - Applying effective contract terms
+                        </a>
+                    </span>
+                            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="eligibility-status">IN PROGRESS</strong>
+                        </li>
+
+                        <li class="app-task-list__item">
+                    <span class="">
+                        <a href="#" aria-describedby="eligibility-status">
+                            4.2 - Procurement/commercial activity, bid evaluation and supplier selection
+                        </a>
+                    </span>
+                            <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+                        </li>
+
+                        <li class="app-task-list__item">
+                    <span class="">
+                        <a href="#" aria-describedby="eligibility-status">
+                            4.3 - Appropriate risk allocation between parties
+                        </a>
+                    </span>
+                            <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+                        </li>
+
+
+                    </ul>
+                </li>
+                <!-- END: THEME 4 -->
+
+                <!-- START: THEME 5 -->
+                <li>
+                    <h2 class="app-task-list__section">
+                        <span class="app-task-list__section-number">5. </span> Commercial Lifecycle Manage: contract management
+                    </h2>
+                    <ul class="app-task-list__items">
+                        <li class="app-task-list__item">
+                    <span class="">
+                        <a href="#" aria-describedby="eligibility-status">
+                            5.1 - Contract mobilisation and transition
+                        </a>
+                    </span>
+                            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">NOT STARTED</strong>
+                        </li>
+
+                        <li class="app-task-list__item">
+                    <span class="">
+                        <a href="#" aria-describedby="eligibility-status">
+                            5.2 - Managing delivery and performance
+                        </a>
+                    </span>
+                            <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+                        </li>
+
+                        <li class="app-task-list__item">
+                    <span class="">
+                        <a href="#" aria-describedby="eligibility-status">
+                            5.3 - Managing contract risk
+                        </a>
+                    </span>
+                            <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+                        </li>
+
+                        <li class="app-task-list__item">
+                    <span class="">
+                        <a href="#" aria-describedby="eligibility-status">
+                            5.4 - Supply chain, inventory management / stock control (NHS Only)
+                        </a>
+                    </span>
+                            <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+                        </li>
+
+                        <li class="app-task-list__item">
+                    <span class="">
+                        <a href="#" aria-describedby="eligibility-status">
+                            5.5 - Supply chain, logistics (NHS Only)
+                        </a>
+                    </span>
+                            <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+                        </li>
+
+
+                    </ul>
+                </li>
+                <!-- END: THEME 5 -->
+
+                <!-- START: THEME 6 -->
+                <li>
+                    <h2 class="app-task-list__section">
+                        <span class="app-task-list__section-number">6. </span> Managing Categories, Markets and Supplier Relations
+                    </h2>
+                    <ul class="app-task-list__items">
+                        <li class="app-task-list__item">
+                    <span class="">
+                        <a href="#" aria-describedby="eligibility-status">
+                            6.1 - Delivering category and market strategies
+                        </a>
+                    </span>
+                            <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+                        </li>
+
+                        <li class="app-task-list__item">
+                    <span class="">
+                        <a href="#" aria-describedby="eligibility-status">
+                            6.2 - Supplier relationship management
+                        </a>
+                    </span>
+                            <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+                        </li>
+                    </ul>
+                </li>
+                <!-- END: THEME 6 -->
+
+                <!-- START: THEME 7 -->
+                <li>
+                    <h2 class="app-task-list__section">
+                        <span class="app-task-list__section-number">7. </span> Commercial systems, reporting and information
+                    </h2>
+                    <ul class="app-task-list__items">
+                        <li class="app-task-list__item">
+                    <span class="">
+                        <a href="#" aria-describedby="eligibility-status">
+                            7.1 - Using commercial systems and tools
+                        </a>
+                    </span>
+                            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="eligibility-status">IN PROGRESS</strong>
+                        </li>
+
+                        <li class="app-task-list__item">
+                    <span class="">
+                        <a href="#" aria-describedby="eligibility-status">
+                            7.2 - Reporting and utilising commercial intelligence and insights
+                        </a>
+                    </span>
+                            <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+                        </li>
+
+                        <li class="app-task-list__item">
+                    <span class="">
+                        <a href="#" aria-describedby="eligibility-status">
+                            7.3 - Data systems and performance management, GS1 and patient level costing (NHS Only)
+                        </a>
+                    </span>
+                            <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+                        </li>
+                    </ul>
+                </li>
+                <!-- END: THEME 7 -->
+
+                <!-- START: THEME 7 -->
+                <li>
+                    <h2 class="app-task-list__section">
+                        <span class="app-task-list__section-number">8. </span> Policy
+                    </h2>
+                    <ul class="app-task-list__items">
+                        <li class="app-task-list__item">
+                    <span class="">
+                        <a href="#" aria-describedby="eligibility-status">
+                            8.1 - Policy awareness and implementation
+                        </a>
+                    </span>
+                            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="eligibility-status">IN PROGRESS</strong>
+                        </li>
+
+                        <li class="app-task-list__item">
+                    <span class="">
+                        <a href="#" aria-describedby="eligibility-status">
+                            8.2 - Social Value
+                        </a>
+                    </span>
+                            <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+                        </li>
+
+                        <li class="app-task-list__item">
+                    <span class="">
+                        <a href="#" aria-describedby="eligibility-status">
+                            8.3 - Small medium enterprises (SMEs)
+                        </a>
+                    </span>
+                            <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+                        </li>
+
+                        <li class="app-task-list__item">
+                    <span class="">
+                        <a href="#" aria-describedby="eligibility-status">
+                            8.4 - Sustainability and Net Zero
+                        </a>
+                    </span>
+                            <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+                        </li>
+                    </ul>
+                </li>
+                <!-- END: THEME 8 -->
+            </ol>
+
+        </div>
+
+
+    </div>
+    <!-- END: RHS CONTENT @80% -->
+
+
+    <!-- START:    --->
+
+</div>

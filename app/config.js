@@ -4,7 +4,7 @@
 
 module.exports = {
   // Service name used in header. Eg: 'Renew your passport'
-  serviceName: 'Government Commercial',
+  serviceName: 'CCIAF Scoring Tool',
 
   // Default port that prototype runs on
   port: '3025',
@@ -28,4 +28,4 @@ module.exports = {
   // Enable or disable Browser Sync
   useBrowserSync: 'true'
 
-}
+};

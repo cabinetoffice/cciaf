@@ -34,7 +34,16 @@ module.exports =  function grid( req, res ) {
 
         urlObj = {
             url: 'home',
-            title: 'Home'
+            nav: 'home',
+            title: 'Home',
+            breadCrumbs: [
+                { text: 'Home', href: "/home3-descoped" },
+                { text: 'Grants', href: "/v1/grants" },
+                { text: 'Overview', href: "" }
+            ],
+            backLink: {
+                show: false
+            }
         };
 
         //console.log("here urlOby", urlObj);
@@ -47,7 +56,12 @@ module.exports =  function grid( req, res ) {
 
         urlObj = {
             url: 'sign-in',
-            title: 'Sign In'
+            nav: 'account',
+            title: 'Sign In',
+            breadCrumbs: [
+                { text: 'Home', href: "/v1/home" },
+                { text: 'Sign in', href: "" }
+            ],
         };
 
         //console.log("here urlOby", urlObj);
@@ -63,6 +77,25 @@ module.exports =  function grid( req, res ) {
             title: 'Create an Account'
         };
 
+        return res.render('v1/home-base', { urlObj } );
+
+
+
+    } else if ( baseUrl === '/v1/help' ) {
+
+        urlObj = {
+            url: 'help',
+            nav: 'help',
+            title: 'Help',
+            breadCrumbs: [
+                { text: 'Home', href: "/home3-descoped" },
+                { text: 'Grants', href: "/v1/grants" },
+                { text: 'Overview', href: "" }
+            ],
+            backLink: {
+                show: false
+            }
+        };
         return res.render('v1/home-base', { urlObj } );
 
 

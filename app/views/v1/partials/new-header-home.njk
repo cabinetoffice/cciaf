@@ -1,0 +1,256 @@
+<style>
+
+    .govuk-header__container {
+        border-bottom: 0;
+    }
+</style>
+
+<style>
+
+    .s4_top-nav__menu {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .s4_top-nav__item-list {
+        position: relative;
+        display: flex !important;
+        height: 36px;
+        flex-direction: row;
+        right: 0;
+    }
+
+    .s4_top-nav__item {
+        display: inline-flex;
+        padding: 0;
+        border: 0;
+    }
+
+    .s4_top-nav__item > a {
+        display: inline-flex;
+        line-height: 36px;
+        letter-spacing: 0.2px;
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .s4_top-nav__item.s4_top-nav__item--active {
+        background-color: #fafafa;
+        padding: 0 12px;
+        color: #000000;
+        flex-direction: column;
+        flex: 0 1 auto;
+    }
+
+    .s4_top-nav__item.s4_top-nav__item--active .s4_top-nav__sub-item-list {
+        display: flex;
+    }
+
+    .s4_top-nav__item.s4_top-nav__item--active a {
+        color: #000000;
+        flex-direction: column;
+        flex: 1;
+        justify-content: center;
+    }
+
+    .s4_top-nav__sub-item-list {
+        position: absolute;
+        top: 36px;
+        list-style: none;
+        padding-left: 0;
+        left: 0;color: #000000;
+        align-items: stretch;
+        display: none;
+        right: 0;
+    }
+
+    .s4_top-nav__sub-item {
+        padding: 0 12px;
+        display: flex;
+        /*flex: 1;*/
+        flex-direction: column;
+        height: 40px;
+        /*margin: 0 10px;*/
+    }
+
+    .s4_top-nav__sub-item:first-of-type {
+        padding-left: 0;
+    }
+
+    .s4_top-nav__sub-item a {
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        line-height: 40px;
+        font-weight: 400;
+        color: #1d70b8;
+    }
+
+    .s4_top-nav__sub-item.s4_top-nav__sub-item--active > a {
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        line-height: 40px;
+        box-shadow: inset 0 -4px 0 rgb(29 112 184);
+        padding-bottom: 1px;
+        color: #1a1a1a;
+        font-weight: 600;
+    }
+
+    .s4_top-nav__sub-item-bar {
+        background-color: #fafafa;height: 40px;border-bottom: 1px solid #dadada;
+    }
+
+    .s4_top-nav__sub-item-bar.s4_top-nav__sub-item-bar--hidden {
+        height: 0;
+    }
+
+
+    .gap_new-top-nav {
+        display: flex;flex-direction: column;
+    }
+
+    .gap_new-top-nav__list {
+        position: relative;display: flex;height: 36px;flex-direction: row;
+    }
+
+    /*.gap_new-top-nav__list li:fir {*/
+
+    /*}*/
+
+    .plus-test::after {
+        display: inline-block;
+        vertical-align: middle;
+        border-radius: 50%;
+        width: 16px;
+        height: 16px;
+        background-image: linear-gradient(black, black), linear-gradient(black, black);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 20% 70%, 70% 20%;
+        position: relative;
+        margin-left: 6px;
+        top: -2px;
+        content: "";
+    }
+
+</style>
+
+
+<header class="govuk-header " role="banner" data-module="govuk-header" style="border-bottom: none;">
+    <div class="govuk-header__container govuk-width-container">
+
+        <div class="" style="color: #e1e1e1;display: flex;justify-content: center; font-weight: 600;">OFFICIAL - SENSITIVE</div>
+
+        <div class="govuk-header__logo" style="width: 30%;">
+            <a href="/ghjgjh" class="govuk-header__link govuk-header__link--homepage">
+                <span class="govuk-header__logotype">
+                  <!--[if gt IE 8]><!-->
+                  <svg aria-hidden="true" focusable="false" class="govuk-header__logotype-crown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 132 97" height="30" width="36">
+                    <path fill="currentColor" fill-rule="evenodd" d="M25 30.2c3.5 1.5 7.7-.2 9.1-3.7 1.5-3.6-.2-7.8-3.9-9.2-3.6-1.4-7.6.3-9.1 3.9-1.4 3.5.3 7.5 3.9 9zM9 39.5c3.6 1.5 7.8-.2 9.2-3.7 1.5-3.6-.2-7.8-3.9-9.1-3.6-1.5-7.6.2-9.1 3.8-1.4 3.5.3 7.5 3.8 9zM4.4 57.2c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.5-1.5-7.6.3-9.1 3.8-1.4 3.5.3 7.6 3.9 9.1zm38.3-21.4c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.6-1.5-7.6.3-9.1 3.8-1.3 3.6.4 7.7 3.9 9.1zm64.4-5.6c-3.6 1.5-7.8-.2-9.1-3.7-1.5-3.6.2-7.8 3.8-9.2 3.6-1.4 7.7.3 9.2 3.9 1.3 3.5-.4 7.5-3.9 9zm15.9 9.3c-3.6 1.5-7.7-.2-9.1-3.7-1.5-3.6.2-7.8 3.7-9.1 3.6-1.5 7.7.2 9.2 3.8 1.5 3.5-.3 7.5-3.8 9zm4.7 17.7c-3.6 1.5-7.8-.2-9.2-3.8-1.5-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.3 3.5-.4 7.6-3.9 9.1zM89.3 35.8c-3.6 1.5-7.8-.2-9.2-3.8-1.4-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.4 3.6-.3 7.7-3.9 9.1zM69.7 17.7l8.9 4.7V9.3l-8.9 2.8c-.2-.3-.5-.6-.9-.9L72.4 0H59.6l3.5 11.2c-.3.3-.6.5-.9.9l-8.8-2.8v13.1l8.8-4.7c.3.3.6.7.9.9l-5 15.4v.1c-.2.8-.4 1.6-.4 2.4 0 4.1 3.1 7.5 7 8.1h.2c.3 0 .7.1 1 .1.4 0 .7 0 1-.1h.2c4-.6 7.1-4.1 7.1-8.1 0-.8-.1-1.7-.4-2.4V34l-5.1-15.4c.4-.2.7-.6 1-.9zM66 92.8c16.9 0 32.8 1.1 47.1 3.2 4-16.9 8.9-26.7 14-33.5l-9.6-3.4c1 4.9 1.1 7.2 0 10.2-1.5-1.4-3-4.3-4.2-8.7L108.6 76c2.8-2 5-3.2 7.5-3.3-4.4 9.4-10 11.9-13.6 11.2-4.3-.8-6.3-4.6-5.6-7.9 1-4.7 5.7-5.9 8-.5 4.3-8.7-3-11.4-7.6-8.8 7.1-7.2 7.9-13.5 2.1-21.1-8 6.1-8.1 12.3-4.5 20.8-4.7-5.4-12.1-2.5-9.5 6.2 3.4-5.2 7.9-2 7.2 3.1-.6 4.3-6.4 7.8-13.5 7.2-10.3-.9-10.9-8-11.2-13.8 2.5-.5 7.1 1.8 11 7.3L80.2 60c-4.1 4.4-8 5.3-12.3 5.4 1.4-4.4 8-11.6 8-11.6H55.5s6.4 7.2 7.9 11.6c-4.2-.1-8-1-12.3-5.4l1.4 16.4c3.9-5.5 8.5-7.7 10.9-7.3-.3 5.8-.9 12.8-11.1 13.8-7.2.6-12.9-2.9-13.5-7.2-.7-5 3.8-8.3 7.1-3.1 2.7-8.7-4.6-11.6-9.4-6.2 3.7-8.5 3.6-14.7-4.6-20.8-5.8 7.6-5 13.9 2.2 21.1-4.7-2.6-11.9.1-7.7 8.8 2.3-5.5 7.1-4.2 8.1.5.7 3.3-1.3 7.1-5.7 7.9-3.5.7-9-1.8-13.5-11.2 2.5.1 4.7 1.3 7.5 3.3l-4.7-15.4c-1.2 4.4-2.7 7.2-4.3 8.7-1.1-3-.9-5.3 0-10.2l-9.5 3.4c5 6.9 9.9 16.7 14 33.5 14.8-2.1 30.8-3.2 47.7-3.2z"></path>
+                  </svg>
+                    <!--<![endif]-->
+                    <!--[if IE 8]>
+                    <img src="/assets/images/govuk-logotype-crown.png" class="govuk-header__logotype-crown-fallback-image" width="36" height="32">
+                    <![endif]-->
+                    <span class="govuk-header__logotype-text">
+                    GOV.UK
+                  </span>
+                </span>
+
+            </a>
+        </div>
+
+        <div class="govuk-header__content" style="width: 70%;">
+
+            <a href="#" class="govuk-header__link govuk-header__link--service-name" style="margin: 10px 0 20px 0;">
+                CCIAF Scoring Tool
+            </a>
+
+
+
+            <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide navigation menu" aria-expanded="false">Menu</button>
+            <nav class="s4_top-nav__menu">
+                <ul id="navigation" class="govuk-header__navigation s4_top-nav__item-list" aria-label="Navigation menu">
+                    <li class="govuk-header__navigation-item s4_top-nav__item
+                        {% if urlObj.url === 'home' %}s4_top-nav__item--active{% endif %}">
+                        <a href="#">Home</a>
+                    </li>
+
+                    <!-- START: current active Nav Item + SUB NAV -->
+                    <!-- ============================================ -->
+                    <li class="govuk-header__navigation-item s4_top-nav__item {% if urlObj.url === 'assess' %}s4_top-nav__item--active{% endif %}">
+                        <a href="#">Assessments</a>
+                        <ul class="s4_top-nav__sub-item-list">
+                            <!-- IS ACTIVE -->
+                            <li class="s4_top-nav__sub-item s4_top-nav__sub-item--active">
+                                <a href="#">
+                                    Overview
+                                </a>
+                            </li>
+                            <li class="s4_top-nav__sub-item">
+                                <a href="#">
+                                    My assessments
+                                </a>
+                            </li>
+                            <li class="s4_top-nav__sub-item">
+                                <a href="#">
+                                    My reviews
+                                </a>
+                            </li>
+                            <li class="s4_top-nav__sub-item">
+                                <a href="#">
+                                    Another
+                                </a>
+                            </li>
+                            <li class="s4_top-nav__sub-item" style="margin-left: auto;background-color: #f5f5f5;">
+                                <a href="#" class="plus-test" style="color: #000CCD;display: inline;">
+                                    Add new assessment
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- END: current active Nav Item -->
+
+                    <li class="govuk-header__navigation-item s4_top-nav__item">
+                        <a href="#">Organisations</a>
+                    </li>
+
+                    <li class="govuk-header__navigation-item s4_top-nav__item">
+                        <a href="#">Notifications</a>
+                    </li>
+
+
+                    <li class="govuk-header__navigation-item"
+                        style="display: inline-flex;/*background-color: lime;*/align-items: stretch;flex-direction: column;padding: 0;">
+                        <a href="" class=""
+                           style="color: #fff;display: flex;text-decoration: none;/* margin-right: 15px; */ /* background-color: orange; */
+    flex: 1 1 auto;height: 100%;flex-direction: row;line-height: 36px;">Search
+                            <svg style="margin-left: 4px;top: 50%;height: 24px;position: relative;transform: translateY(-50%);" fill="#ffffff" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="30px" height="30px">
+                                <path d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z"/></svg>
+                        </a>
+
+                    </li>
+                    <li class="govuk-header__navigation-item s4_top-nav__item" style="margin-left: auto;">
+                        <a class="govuk-header__link" href="#">Help</a>
+                    </li>
+
+                    <li class="govuk-header__navigation-item s4_top-nav__item" style="align-self: revert;">
+                        {% if urlObj.loggedIn %}
+                            <a class="govuk-header__link" href="#">Sign out</a>
+                        {% else %}
+                            <a class="govuk-header__link" href="#">Sign in / Create an account</a>
+                        {% endif %}
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+
+    </div>
+    <div class="s4_top-nav__sub-item-bar {% if urlObj.url === 'home' %}s4_top-nav__sub-item-bar--hidden"{% endif %}></div>
+
+</header>

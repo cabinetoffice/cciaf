@@ -26,19 +26,9 @@
 {% block header %}
     {#{% include "../includes/gap/header-nav.njk" %}#}
 
+    {#{% include './partials/basic-header.njk' %}#}
+
     {% include './partials/new-header.njk' %}
-
-
-    {#{% if (urlObj.nav === 'home') or (urlObj.nav === 'account') %}#}
-
-        {#{% include './partials/new-header.njk' %}#}
-
-    {#{% else %}#}
-
-        {#{% include './partials/basic-header.njk' %}#}
-
-    {#{% endif %}#}
-
 
 
     <div class="app-width-container">
@@ -51,15 +41,13 @@
 
 {% block beforeContent %}
 
-    {#{{ govukBreadcrumbs({#}
-        {#items: urlObj.breadCrumbs#}
-    {#}) }}#}
+    {{ govukBreadcrumbs({
+        items: urlObj.breadCrumbs
+    }) }}
 
 
 
     {% include './partials/logo-banner.njk' %}
-
-
 
     {% if urlObj.backLink.show %}
         {{ govukBackLink({
@@ -88,11 +76,50 @@
     {% endif %}
 
 
-    {% if urlObj.url === 'links' %}
-        {% include "./base/links.njk" %}
+    {% if urlObj.url === 'chart-test' %}
+        {% include "./main/data-test.njk" %}
 
-        {% elif urlObj.url === 'home' %}
-        {% include "./base/home.njk" %}
+        {% elif urlObj.url === 'todo-test' %}
+        {% include "./main/todo-test.njk" %}
+
+        {% elif urlObj.url === 'todo-table-test' %}
+        {% include "./main/todo-table-test.njk" %}
+
+        {% elif urlObj.url === 'todo-table-links-test' %}
+        {% include "./main/todo-table-links-test.njk" %}
+
+        {% elif urlObj.url === 'submitting-assessment-radios-test' %}
+        {% include "./main/submitting-assessment-radio-test.njk" %}
+
+
+
+
+
+
+
+        {% elif urlObj.url === 'home4' %}
+        {% include "./base/home4.njk" %}
+
+        {#{% elif urlObj.url === 'home3' %}#}
+        {#{% include "./base/home3-no-community-news.njk" %}#}
+
+        {% elif urlObj.url === 'home3-no-search-or-notifications' %}
+        {% include "./base/home3-no-search.njk" %}
+
+        {% elif urlObj.url === 'home3-descoped' %}
+        {% include "./base/home3-descoped.njk" %}
+
+        {% elif urlObj.url === 'cookies' %}
+        {% include "./base/cookies.njk" %}
+
+        {% elif urlObj.url === 'accessibility' %}
+        {% include "./base/accessibility.njk" %}
+
+        {% elif urlObj.url === 'terms-and-conditions' %}
+        {% include "./base/terms-and-conditions.njk" %}
+
+        {% elif urlObj.url === 'about-find-a-grant' %}
+        {% include "./base/about-find-a-grant.njk" %}
 
         {% elif urlObj.url === 'privacy' %}
         {% include "./base/privacy.njk" %}
