@@ -94,14 +94,17 @@
         {% elif urlObj.url === 'home' %}
         {% include "./base/home.njk" %}
 
-        {% elif urlObj.url === 'privacy' %}
-        {% include "./base/privacy.njk" %}
+        {% elif urlObj.url === 'request-access' %}
+        {% include "./base/request-access.njk" %}
+
+        {% elif urlObj.url === 'request-complete' %}
+        {% include "./base/request-complete.njk" %}
 
         {% elif urlObj.url === 'sign-in' %}
         {% include "./base/sign-in.njk" %}
 
-        {% elif urlObj.url === 'register' %}
-        {% include "./base/register.njk" %}
+        {% elif urlObj.url === 'privacy' %}
+        {% include "./base/privacy.njk" %}
 
         {% elif urlObj.url === 'password-reset' %}
         {% include "./base/password-reset.njk" %}

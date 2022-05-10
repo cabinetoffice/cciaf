@@ -52,7 +52,51 @@ module.exports =  function grid( req, res ) {
 
 
 
-    }  else if ( baseUrl === '/v1/sign-in' ) {
+    } else if ( baseUrl === '/v1/request-access' ) {
+
+        urlObj = {
+            url: 'request-access',
+            nav: 'account',
+            title: 'Request Access',
+            breadCrumbs: [
+                { text: 'Home', href: "/home3-descoped" },
+                { text: 'Grants', href: "/v1/grants" },
+                { text: 'Overview', href: "" }
+            ],
+            backLink: {
+                show: false
+            }
+        };
+
+        //console.log("here urlOby", urlObj);
+
+        return res.render('v1/home-base', { urlObj } );
+
+
+
+    } else if ( baseUrl === '/v1/request-complete' ) {
+
+        urlObj = {
+            url: 'request-complete',
+            nav: 'account',
+            title: 'Request Access',
+            breadCrumbs: [
+                { text: 'Home', href: "/home3-descoped" },
+                { text: 'Grants', href: "/v1/grants" },
+                { text: 'Overview', href: "" }
+            ],
+            backLink: {
+                show: false
+            }
+        };
+
+        //console.log("here urlOby", urlObj);
+
+        return res.render('v1/home-base', { urlObj } );
+
+
+
+    } else if ( baseUrl === '/v1/sign-in' ) {
 
         urlObj = {
             url: 'sign-in',

@@ -19,7 +19,9 @@ router.get( '/v1/home', homeManager );
 
 router.get( '/v1/sign-in', homeManager );
 
-router.get( '/v1/create-an-account', homeManager );
+router.get( '/v1/request-access', homeManager );
+
+router.get( '/v1/request-complete', homeManager );
 
 router.get( '/v1/chart-test', dataManager );
 
