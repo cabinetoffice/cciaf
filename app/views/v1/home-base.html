@@ -103,11 +103,11 @@
         {% elif urlObj.url === 'sign-in' %}
         {% include "./base/sign-in.njk" %}
 
-        {% elif urlObj.url === 'privacy' %}
-        {% include "./base/privacy.njk" %}
-
         {% elif urlObj.url === 'password-reset' %}
         {% include "./base/password-reset.njk" %}
+
+        {% elif urlObj.url === 'privacy' %}
+        {% include "./base/privacy.njk" %}
 
     {% endif %}
 

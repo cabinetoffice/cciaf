@@ -51,7 +51,7 @@
 
     {% if urlObj.backLink.show %}
         {{ govukBackLink({
-            text: 'Back ' + urlObj.backLink.extraText,
+            text: urlObj.backLink.extraText,
             href: urlObj.backLink.url
         }) }}
     {% endif %}
@@ -68,21 +68,19 @@
 
 {% block content %}
 
-    {# OLD BACK LINK
     {% if urlObj.backLink.show %}
         {{ govukBackLink({
             text: urlObj.backLinkText,
             href: "/v2/grants/schemes/landing-detail"
         }) }}
     {% endif %}
-    #}
 
 
-    {% if urlObj.url === 'chart-test' %}
-        {% include "./main/data-test.njk" %}
+    {% if urlObj.url === 'organisations' %}
+        {% include "./main/organisations-overview.njk" %}
 
-        {% elif urlObj.url === 'todo-test' %}
-        {% include "./main/todo-test.njk" %}
+        {% elif urlObj.url === 'my-organisation' %}
+        {% include "./main/organisations-my.njk" %}
 
         {% elif urlObj.url === 'todo-table-test' %}
         {% include "./main/todo-table-test.njk" %}
@@ -95,33 +93,8 @@
 
 
         <!-- START: Assessments -->
-        {% elif urlObj.url === 'assessments-overview' %}
+        {% elif urlObj.url === 'assess-overview' %}
         {% include "./main/assessments-overview.njk" %}
-
-        {% elif urlObj.url === 'my-assessments' %}
-        {% include "./main/assessments-my.njk" %}
-
-        {% elif urlObj.url === 'assessment-detail-radio' %}
-        {% include "main/assessment-detail-radio__OLD_WiP.njk" %}
-
-        {% elif urlObj.url === 'assessments-overview' %}
-        {% include "./main/assessments-overview.njk" %}
-
-        {% elif urlObj.url === 'new-assessment' %}
-        {% include "./main/assessment-new.njk" %}
-
-
-        {# Practice areas #}
-        {% elif urlObj.url === 'practice-area-detail-radio' %}
-        {% include "./main/practice-area-detail-radio.njk" %}
-
-        {% elif urlObj.url === 'practice-area-detail-radio-ambition' %}
-        {% include "./main/practice-area-detail-radio-ambition.njk" %}
-
-        {% elif urlObj.url === 'practice-area-detail-radio-themes' %}
-        {% include "./main/practice-area-detail-radio-themes.njk" %}
-
-
 
 
 

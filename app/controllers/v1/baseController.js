@@ -114,6 +114,24 @@ module.exports =  function grid( req, res ) {
 
 
 
+    } else if ( baseUrl === '/v1/password-reset' ) {
+
+        urlObj = {
+            url: 'password-reset',
+            nav: 'account',
+            title: 'Password reset',
+            breadCrumbs: [
+                { text: 'Home', href: "/v1/home" },
+                { text: 'Sign in', href: "" }
+            ],
+        };
+
+        //console.log("here urlOby", urlObj);
+
+        return res.render('v1/home-base', { urlObj } );
+
+
+
     } else if ( baseUrl === '/v1/create-an-account' ) {
 
         urlObj = {

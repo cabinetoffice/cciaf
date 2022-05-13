@@ -47,7 +47,6 @@ module.exports =  function grid( req, res ) {
         return res.render('v1/data-base', { urlObj } );
 
 
-
     } else if ( baseUrl === '/v1/todo-test' ) {
 
         urlObj = {
@@ -63,7 +62,6 @@ module.exports =  function grid( req, res ) {
         //console.log("here urlOby", urlObj);
 
         return res.render('v1/data-base', { urlObj } );
-
 
 
     } else if ( baseUrl === '/v1/todo-table-test' ) {
@@ -83,7 +81,6 @@ module.exports =  function grid( req, res ) {
         return res.render('v1/data-base', { urlObj } );
 
 
-
     } else if ( baseUrl === '/v1/todo-table-links-test' ) {
 
         urlObj = {
@@ -99,7 +96,6 @@ module.exports =  function grid( req, res ) {
         //console.log("here urlOby", urlObj);
 
         return res.render('v1/data-base', { urlObj } );
-
 
 
     } else if ( baseUrl === '/v1/submitting-assessment-radios-test' ) {
@@ -120,11 +116,10 @@ module.exports =  function grid( req, res ) {
         return res.render('v1/data-base', { urlObj } );
 
 
-
     } else if ( baseUrl === '/v1/assessments' ) {
 
         urlObj = {
-            url: 'assess-overview',
+            url: 'assessments-overview',
             nav: 'assess',
             subNav: 'overview',
             title: 'submitting assessment radios test',
@@ -140,14 +135,85 @@ module.exports =  function grid( req, res ) {
         return res.render('v1/data-base', { urlObj } );
 
 
-
     } else if ( baseUrl === '/v1/my-assessments' ) {
 
         urlObj = {
-            url: 'assess-overview',
+            url: 'my-assessments',
             nav: 'assess',
             subNav: 'my-assess',
             title: 'submitting assessment radios test',
+            breadCrumbs: [
+                { text: 'Home', href: "/home3-descoped" },
+                { text: 'Assessments', href: "/v1/grants" },
+                { text: 'My assessments', href: "" }
+            ],
+        };
+
+        //console.log("here urlOby", urlObj);
+
+        return res.render('v1/data-base', { urlObj } );
+
+    }
+
+    // START: Assessment detail
+    else if ( baseUrl === '/v1/new-assessment' ) {
+
+        urlObj = {
+            url: 'new-assessment',
+            nav: 'assess',
+            subNav: 'new-assess',
+            title: 'New Assessment',
+            breadCrumbs: [
+                { text: 'Home', href: "/v1/home" },
+                { text: 'Assessments', href: "/v1/assessments" },
+                { text: 'Overview', href: "" }
+            ],
+            backLink: {
+                show: true,
+                extraText: 'to My Assessments',
+                url: '/v1/my-assessments'
+            }
+        };
+
+        //console.log("here urlOby", urlObj);
+
+        return res.render('v1/data-base', { urlObj } );
+
+    } else if ( baseUrl === '/v1/assessment-detail-linked-themes' ) {
+
+        urlObj = {
+            url: 'new-assessment',
+            nav: 'assess',
+            subNav: 'new-assess',
+            title: 'New Assessment',
+            breadCrumbs: [
+                { text: 'Home', href: "/v1/home" },
+                { text: 'Assessments', href: "/v1/assessments" },
+                { text: 'Overview', href: "" }
+            ],
+            backLink: {
+                show: true,
+                extraText: 'to My Assessments',
+                url: '/v1/my-assessments'
+            }
+        };
+
+        //console.log("here urlOby", urlObj);
+
+        return res.render('v1/data-base', { urlObj } );
+
+    }
+
+
+
+
+    else if ( baseUrl === '/v1/assessment-detail-select' ) {
+
+        urlObj = {
+            url: 'assessment-detail-select',
+            nav: 'assess',
+            subNav: 'new-assess',
+            title: 'Assessment detail radio',
             breadCrumbs: [
                 { text: 'Home', href: "/home3-descoped" },
                 { text: 'Assessments', href: "/v1/grants" },
@@ -159,7 +225,65 @@ module.exports =  function grid( req, res ) {
 
         return res.render('v1/data-base', { urlObj } );
 
+    } else if ( baseUrl === '/v1/practice-area-detail-radio' ) {
 
+        urlObj = {
+            url: 'practice-area-detail-radio',
+            nav: 'assess',
+            subNav: 'my-assess',
+            title: 'Assessment detail radio',
+            breadCrumbs: [
+                { text: 'Home', href: "/home3-descoped" },
+                { text: 'Assessments', href: "/v1/grants" },
+                { text: 'My assessments', href: "/v1/my-assessments" },
+                { text: 'Assessment ID: DFE-909787', href: "" }
+            ],
+            backLink: {
+                show: true,
+                extraText: 'to my assessments',
+                url: '#'
+            }
+        };
+
+        //console.log("here urlOby", urlObj);
+
+        return res.render('v1/data-base', { urlObj } );
+
+    } else if ( baseUrl === '/v1/practice-area-detail-radio-ambition' ) {
+
+        urlObj = {
+            url: 'practice-area-detail-radio-ambition',
+            nav: 'assess',
+            subNav: 'my-assess',
+            title: 'Assessment detail radio',
+            breadCrumbs: [
+                { text: 'Home', href: "/home3-descoped" },
+                { text: 'Assessments', href: "/v1/grants" },
+                { text: 'Overview', href: "" }
+            ],
+        };
+
+        //console.log("here urlOby", urlObj);
+
+        return res.render('v1/data-base', { urlObj } );
+
+    } else if ( baseUrl === '/v1/practice-area-detail-radio-themes' ) {
+
+        urlObj = {
+            url: 'practice-area-detail-radio-themes',
+            nav: 'assess',
+            subNav: 'my-assess',
+            title: 'Assessment detail radio',
+            breadCrumbs: [
+                { text: 'Home', href: "/home3-descoped" },
+                { text: 'Assessments', href: "/v1/grants" },
+                { text: 'Overview', href: "" }
+            ],
+        };
+
+        //console.log("here urlOby", urlObj);
+
+        return res.render('v1/data-base', { urlObj } );
 
     }
 

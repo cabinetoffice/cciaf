@@ -1,0 +1,132 @@
+<div class="govuk-grid-row">
+
+
+    <style>
+        .s4_nav-test {
+            display: flex;
+            line-height: 30px;
+            margin-bottom: 6px;
+        }
+
+        .s4_nav-link-test {
+            padding-left: 14px;
+            display: flex;
+            flex: 1;
+        }
+
+        .s4_nav-link-test--active {
+            margin-right: -12px;
+        }
+
+        .s4_active-test {
+            font-weight: 600;
+            text-decoration: none;
+            color: #000 !important;
+            list-style-type: none;
+            border-left: 5px solid #1d70b8;
+            display: flex;
+            /*margin-left: -20px;*/
+            padding-left: 14px;
+            background-color: #e3edff;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            flex: 1;
+        }
+
+        .s4_table-head {
+            background-color: #f7f7f7;
+            border: 1px solid #dadada;
+            border-bottom: 2px solid #000;
+        }
+    </style>
+
+
+    {% include '../partials/practice-area-left-nav.njk' %}
+
+
+    <!-- START: RHS CONTENT @80% -->
+    <div class="govuk-!-margin-bottom-9 govuk-grid-column-three-quarters" style="width: 80%;">
+
+
+
+
+        <div class="govuk-!-width-full">
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Your organisation's ambition
+                        </h1>
+                    </legend>
+                    <div id="sign-in-hint" class="govuk-hint">
+                        Introduction to describe this dataset goes here.
+                    </div>
+                    <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="sign-in" name="sign-in" type="radio" value="government-gateway" aria-describedby="sign-in-item-hint">
+                            <label class="govuk-label govuk-radios__label" for="sign-in">
+                                In development
+                            </label>
+                            <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                                The description of "In development" goes here.
+                            </div>
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="sign-in-2" name="sign-in" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
+                            <label class="govuk-label govuk-radios__label" for="sign-in-2">
+                                Good
+                            </label>
+                            <div id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
+                                The description of "Good" goes here.
+                            </div>
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="sign-in-2" name="sign-in" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
+                            <label class="govuk-label govuk-radios__label" for="sign-in-2">
+                                Better
+                            </label>
+                            <div id="sign-in-3-item-hint" class="govuk-hint govuk-radios__hint">
+                                The description of "Better" goes here.
+                            </div>
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="sign-in-2" name="sign-in" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
+                            <label class="govuk-label govuk-radios__label" for="sign-in-2">
+                                Best
+                            </label>
+                            <div id="sign-in-4-item-hint" class="govuk-hint govuk-radios__hint">
+                                The description of "Best" goes here.
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                </fieldset>
+            </div>
+
+            <button class="govuk-button" data-module="govuk-button">
+                Save to this point
+            </button>
+
+
+        </div>
+
+        <!-- START: OTHER TABLES -->
+
+
+
+
+    </div>
+    <!-- END: RHS CONTENT @80% -->
+
+
+    <!-- START:    --->
+
+</div>
