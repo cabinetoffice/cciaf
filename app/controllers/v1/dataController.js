@@ -262,7 +262,7 @@ module.exports =  function grid( req, res ) {
                 { text: 'Assessments', href: "/v1/grants" },
                 { text: 'My assessments', href: "/v1/my-assessments" },
                 { text: 'Assessment ID: DFE-909787', href: "/v1/assessment-detail-linked-themes" },
-                { text: 'Practice Area 5', href: "" }
+                { text: 'Theme 5', href: "" }
             ],
             backLink: {
                 show: true,
@@ -287,7 +287,7 @@ module.exports =  function grid( req, res ) {
                 { text: 'Assessments', href: "/v1/grants" },
                 { text: 'My assessments', href: "/v1/my-assessments" },
                 { text: 'Assessment ID: DFE-909787', href: "/v1/assessment-detail-linked-themes" },
-                { text: 'Practice Area 5', href: "" }
+                { text: 'Theme 5', href: "" }
             ],
         };
 
@@ -307,7 +307,7 @@ module.exports =  function grid( req, res ) {
                 { text: 'Assessments', href: "/v1/grants" },
                 { text: 'My assessments', href: "/v1/my-assessments" },
                 { text: 'Assessment ID: DFE-909787', href: "/v1/assessment-detail-linked-themes" },
-                { text: 'Practice Area 5', href: "" }
+                { text: 'Theme 5', href: "" }
             ],
         };
 
