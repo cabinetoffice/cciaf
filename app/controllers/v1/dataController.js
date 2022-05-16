@@ -266,8 +266,8 @@ module.exports =  function grid( req, res ) {
             ],
             backLink: {
                 show: true,
-                extraText: 'to my assessments',
-                url: '#'
+                extraText: 'to Assessment Detail',
+                url: '/v1/assessment-detail-linked-info'
             }
         };
 
