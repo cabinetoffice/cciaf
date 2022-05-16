@@ -53,6 +53,8 @@ router.get( '/v1/assessment-detail-radio', dataManager );
 
 router.get( '/v1/assessment-detail-select', dataManager );
 
+router.get( '/v1/assessment-detail-linked-info', dataManager );
+
 router.get( '/v1/assessment-detail-linked-themes', dataManager );
 
 // Practice area detail

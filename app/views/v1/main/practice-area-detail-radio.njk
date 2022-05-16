@@ -210,6 +210,10 @@
             </tbody>
         </table>
 
+        <button class="govuk-button" data-module="govuk-button">
+            Save and continue
+        </button>
+
         <div class="govuk-!-width-full">
 
             <h1 class="govuk-heading-xl">Bar chart</h1>
@@ -218,66 +222,66 @@
         <div class="govuk-!-width-full">
 
 
-<div class="govuk-!-width-two-thirds">
-    <canvas id="myChart2" width="400" height="300"></canvas>
-    <script>
-        var ctx2 = document.getElementById('myChart2').getContext('2d');
-        var myChart2 = new Chart(ctx2, {
-            type: 'bar',
-            data: {
-                labels: [
-                    '5.1 - Contract mobilisation and transition',
-                    '5.2 - Managing delivery and performance',
-                    '5.3 - Managing contract risk',
-                    '5.4 - Supply chain, inventory management / stock control (NHS Only)',
-                    '5.5 - Supply chain, logistics (NHS Only)',
-                    // 'Orange'
-                ],
-                datasets: [{
-                    label: 'Performance %',
-                    data: [12, 19, 3, 5, 2, 3],
-                    backgroundColor: [
-                        'rgba(212, 53, 28, 0.4)',
-                        'rgba(29, 112, 184, 0.4)',
-                        'rgba(213, 56, 128, 0.4)',
-                        'rgba(0, 112, 60, 0.4)',
-                        'rgba(76, 44, 146, 0.4)',
-                        //'rgba(244, 119, 56, 0.4)'
-                    ],
-                    borderColor: [
-                        'rgba(212, 53, 28, 1)',
-                        'rgba(29, 112, 184, 1)',
-                        'rgba(213, 56, 128, 1)',
-                        'rgba(0, 112, 60, 1)',
-                        'rgba(76, 44, 146, 1)',
-                        //'rgba(244, 119, 56, 1)'
-                    ],
-                    borderWidth: 2
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true,
-                            fontSize: 20
-                        }
-                    }]
-                },
-                plugins: {
-                    legend: {
-                        labels: {
-                            // This more specific font property overrides the global property
-                            font: {
-                                size: 24
+            <div class="govuk-!-width-two-thirds">
+                <canvas id="myChart2" width="400" height="300"></canvas>
+                <script>
+                    var ctx2 = document.getElementById('myChart2').getContext('2d');
+                    var myChart2 = new Chart(ctx2, {
+                        type: 'bar',
+                        data: {
+                            labels: [
+                                '5.1 - Contract mobilisation and transition',
+                                '5.2 - Managing delivery and performance',
+                                '5.3 - Managing contract risk',
+                                '5.4 - Supply chain, inventory management / stock control (NHS Only)',
+                                '5.5 - Supply chain, logistics (NHS Only)',
+                                // 'Orange'
+                            ],
+                            datasets: [{
+                                label: 'Performance %',
+                                data: [12, 19, 3, 5, 2, 3],
+                                backgroundColor: [
+                                    'rgba(212, 53, 28, 0.4)',
+                                    'rgba(29, 112, 184, 0.4)',
+                                    'rgba(213, 56, 128, 0.4)',
+                                    'rgba(0, 112, 60, 0.4)',
+                                    'rgba(76, 44, 146, 0.4)',
+                                    //'rgba(244, 119, 56, 0.4)'
+                                ],
+                                borderColor: [
+                                    'rgba(212, 53, 28, 1)',
+                                    'rgba(29, 112, 184, 1)',
+                                    'rgba(213, 56, 128, 1)',
+                                    'rgba(0, 112, 60, 1)',
+                                    'rgba(76, 44, 146, 1)',
+                                    //'rgba(244, 119, 56, 1)'
+                                ],
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                yAxes: [{
+                                    ticks: {
+                                        beginAtZero: true,
+                                        fontSize: 20
+                                    }
+                                }]
+                            },
+                            plugins: {
+                                legend: {
+                                    labels: {
+                                        // This more specific font property overrides the global property
+                                        font: {
+                                            size: 24
+                                        }
+                                    }
+                                }
                             }
                         }
-                    }
-                }
-            }
-        });
-    </script>
-</div>
+                    });
+                </script>
+            </div>
 
         </div>
 

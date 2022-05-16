@@ -1,0 +1,144 @@
+<div class="govuk-grid-row">
+
+
+    <style>
+        .s4_nav-test {
+            display: flex;
+            line-height: 30px;
+            margin-bottom: 6px;
+        }
+
+        .s4_nav-link-test {
+            padding-left: 14px;
+            display: flex;
+            flex: 1;
+        }
+
+        .s4_nav-link-test--active {
+            margin-right: -12px;
+        }
+
+        .s4_active-test {
+            font-weight: 600;
+            text-decoration: none;
+            color: #000 !important;
+            list-style-type: none;
+            border-left: 5px solid #1d70b8;
+            display: flex;
+            /*margin-left: -20px;*/
+            padding-left: 14px;
+            background-color: #e3edff;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            flex: 1;
+        }
+
+        .s4_table-head {
+            background-color: #f7f7f7;
+            border: 1px solid #dadada;
+            border-bottom: 2px solid #000;
+        }
+    </style>
+
+
+    {% include '../partials/assessment-detail-left-nav.njk' %}
+
+
+    <!-- START: RHS CONTENT @80% -->
+    <div class="govuk-!-margin-bottom-9 govuk-grid-column-three-quarters" style="width: 80%;">
+
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-7">
+            Assessment ID: DFE-234567
+        </h1>
+
+        <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m">Month you apply</caption>
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header govuk-!-width-one-third">Organisation information</th>
+                <th scope="col" class="govuk-table__header govuk-!-width-two-thirds">Assessment organisation</th>
+
+            </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Organisation type</td>
+                <td class="govuk-table__cell">Arms Length Body</td>
+
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Parent Department</td>
+                <td class="govuk-table__cell">Department of Digital, Culture, Media and Sport</td>
+
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Organisation name</td>
+                <td class="govuk-table__cell">The Heritage Lottery Fund</td>
+
+            </tr>
+            </tbody>
+        </table>
+
+        <table class="govuk-table govuk-!-margin-top-9">
+            <caption class="govuk-table__caption govuk-table__caption--m">Commercial Spend Under Assessment</caption>
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header govuk-!-width-one-third">Spend type(s)</th>
+                <th scope="col" class="govuk-table__header govuk-!-width-two-thirds">Amount</th>
+
+            </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Third Party Spend</td>
+                <td class="govuk-table__cell">£420,008,707</td>
+
+            </tr>
+
+            </tbody>
+        </table>
+
+        <table class="govuk-table govuk-!-margin-top-9">
+            <caption class="govuk-table__caption govuk-table__caption--m">Peer Assessment details</caption>
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header govuk-!-width-one-third">Organisation information</th>
+                <th scope="col" class="govuk-table__header govuk-!-width-two-thirds">Assessment organisation</th>
+
+            </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Have any organisations peer reviewed this assessment?</td>
+                <td class="govuk-table__cell">NO</td>
+
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Name of peer reviewer organisation</td>
+                <td class="govuk-table__cell">NESTA</td>
+
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Name of Peer reviewer</td>
+                <td class="govuk-table__cell">Christopher Costalionedolous</td>
+
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Peer reviewer e-mail</td>
+                <td class="govuk-table__cell">christopher.costalionedolous@nesta.gov.uk</td>
+
+            </tr>
+            </tbody>
+        </table>
+
+        <button class="govuk-button" data-module="govuk-button">
+            Edit assessment information
+        </button>
+
+    </div>
+    <!-- END: RHS CONTENT @80% -->
+
+
+    <!-- START:    --->
+
+</div>

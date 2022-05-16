@@ -179,17 +179,42 @@ module.exports =  function grid( req, res ) {
 
         return res.render('v1/data-base', { urlObj } );
 
-    } else if ( baseUrl === '/v1/assessment-detail-linked-themes' ) {
+    } else if ( baseUrl === '/v1/assessment-detail-linked-info' ) {
 
         urlObj = {
-            url: 'new-assessment',
+            url: 'assessment-detail-linked-info',
             nav: 'assess',
-            subNav: 'new-assess',
-            title: 'New Assessment',
+            subNav: 'my-assess',
+            title: 'Assessment Detail Linked Info',
             breadCrumbs: [
                 { text: 'Home', href: "/v1/home" },
                 { text: 'Assessments', href: "/v1/assessments" },
-                { text: 'Overview', href: "" }
+                { text: 'My assessments', href: "/v1/my-assessments" },
+                { text: 'Assessment detail', href: "" }
+            ],
+            backLink: {
+                show: true,
+                extraText: 'to My Assessments',
+                url: '/v1/my-assessments'
+            }
+        };
+
+        //console.log("here urlOby", urlObj);
+
+        return res.render('v1/data-base', { urlObj } );
+
+    } else if ( baseUrl === '/v1/assessment-detail-linked-themes' ) {
+
+        urlObj = {
+            url: 'assessment-detail-linked-themes',
+            nav: 'assess',
+            subNav: 'my-assess',
+            title: 'Assessment Detail Linked Themes',
+            breadCrumbs: [
+                { text: 'Home', href: "/home3-descoped" },
+                { text: 'Assessments', href: "/v1/grants" },
+                { text: 'My assessments', href: "/v1/my-assessments" },
+                { text: 'Assessment ID: DFE-909787', href: "" }
             ],
             backLink: {
                 show: true,
@@ -259,7 +284,8 @@ module.exports =  function grid( req, res ) {
             breadCrumbs: [
                 { text: 'Home', href: "/home3-descoped" },
                 { text: 'Assessments', href: "/v1/grants" },
-                { text: 'Overview', href: "" }
+                { text: 'My assessments', href: "/v1/my-assessments" },
+                { text: 'Assessment ID: DFE-909787', href: "" }
             ],
         };
 
@@ -277,7 +303,8 @@ module.exports =  function grid( req, res ) {
             breadCrumbs: [
                 { text: 'Home', href: "/home3-descoped" },
                 { text: 'Assessments', href: "/v1/grants" },
-                { text: 'Overview', href: "" }
+                { text: 'My assessments', href: "/v1/my-assessments" },
+                { text: 'Assessment ID: DFE-909787', href: "" }
             ],
         };
 
