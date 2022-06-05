@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    {{ urlObj.title|safe }} &raquo; Government Commercial
+{% endblock %}
+
+
+
+{% block bodyStart %}
+
+
+    {#{% include './partials/cookies-banner.njk' %}#}
+
+
+    {{ govukSkipLink({
+        href: '#gap_home-skip-to',
+        text: 'Skip to main content'
+    }) }}
+
+{% endblock %}
+
+    {#{% block skipLink %}#}
+        {##}
+    {#{% endblock %}#}
+
+{% block header %}
+    {#{% include "../includes/gap/header-nav.njk" %}#}
+
+    {% include './partials/new-header.njk' %}
+
+
+    {#{% if (urlObj.nav === 'home') or (urlObj.nav === 'account') %}#}
+
+    {#{% include './partials/new-header.njk' %}#}
+
+    {#{% else %}#}
+
+    {#{% include './partials/basic-header.njk' %}#}
+
+    {#{% endif %}#}
+
+
+
+    <div class="app-width-container">
+        <div class="govuk-width-container" style="border-top: 6px solid #dadada;">
+            {% include "./partials/phase-banner.njk" %}
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block beforeContent %}
+
+    {#{{ govukBreadcrumbs({#}
+    {#items: urlObj.breadCrumbs#}
+    {#}) }}#}
+
+
+
+    {% include './partials/logo-banner.njk' %}
+
+
+
+    {% if urlObj.backLink.show %}
+        {{ govukBackLink({
+            text: urlObj.backLink.extraText,
+            href: urlObj.backLink.url
+        }) }}
+    {% endif %}
+
+
+
+    {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+    {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+
+{% endblock %}
+
+{% block content %}
+
+    {% if urlObj.backLink.show %}
+        {{ govukBackLink({
+            text: urlObj.backLinkText,
+            href: "/v2/grants/schemes/landing-detail"
+        }) }}
+    {% endif %}
+
+
+    {% if urlObj.url === 'links' %}
+        {% include "./base/links.njk" %}
+
+        {% elif urlObj.url === 'home' %}
+        {% include "./base/home.njk" %}
+
+        {% elif urlObj.url === 'request-access' %}
+        {% include "./base/request-access.njk" %}
+
+        {% elif urlObj.url === 'request-complete' %}
+        {% include "./base/request-complete.njk" %}
+
+        {% elif urlObj.url === 'sign-in' %}
+        {% include "./base/sign-in.njk" %}
+
+        {% elif urlObj.url === 'password-reset' %}
+        {% include "./base/password-reset.njk" %}
+
+        {% elif urlObj.url === 'privacy' %}
+        {% include "./base/privacy.njk" %}
+
+    {% endif %}
+
+
+{% endblock %}
