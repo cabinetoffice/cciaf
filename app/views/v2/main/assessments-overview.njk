@@ -1,0 +1,70 @@
+<!-- styles moved to sass -->
+
+<div class="govuk-grid-row govuk-!-margin-top-3">
+
+    {% include '../nav/left-nav-assessment.njk' %}
+
+    <!-- START: RHS CONTENT @80% -->
+    <div class="govuk-!-margin-bottom-9 govuk-grid-column-three-quarters" style="width: 80%;">
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h1 class="govuk-heading-xl ">Assessment overview</h1>
+
+            </div>
+        </div>
+
+
+        <div class="govuk-grid-row">
+            <div class="" style="padding: 0 15px;">
+                <table class="govuk-table govuk-!-font-size-16">
+                    <caption class="govuk-table__caption govuk-table__caption--m">My assessments</caption>
+                    <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header" width="45%">Theme</th>
+                        <th scope="col" class="govuk-table__header">Assigned to:</th>
+                        <th scope="col" class="govuk-table__header">Criteria</th>
+                        <th scope="col" class="govuk-table__header">Percentage complete (%)</th>
+                        <th scope="col" class="govuk-table__header" width="14%">Status</th>
+                    </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+
+                    {% for item in urlObj.themeData %}
+                        <!-- START: THEME LOOP  -->
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                <strong>{{ item.theme_id|safe }}.</strong>
+                                <a href="#" class="govuk-link">{{ item.theme_name|safe }}</a></td>
+                            <td class="govuk-table__cell
+                            {% if item.assigned_to == "NOT YET ASSIGNED" %}govuk-!-font-weight-bold{% endif %}">
+                                {{ item.assigned_to|safe }}</td>
+                            <td class="govuk-table__cell">{{ item.sub_tasks|safe }}</td>
+                            <td class="govuk-table__cell">{{ item.pc_complete|safe }}%</td>
+                            <td class="govuk-table__cell">
+                                <strong class="govuk-tag app-task-list__tag
+                            {% if item.status == 'IN PROGRESS' %}
+                            govuk-tag--blue
+                            {% elif item.status == 'NOT STARTED' %} govuk-tag--grey
+                            {% endif %}" id="eligibility-status">{{ item.status|safe }}</strong>
+                            </td>
+                            {#<td class="govuk-table__cell gc_bold-text gc_blue-text">{{ item.status|safe }}</td>#}
+                        </tr>
+                    {% endfor %}
+                    <!-- END: THEME LOOP  -->
+
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+
+
+    </div>
+    <!-- END: RHS CONTENT @80% -->
+
+
+    <!-- START:    --->
+
+</div>

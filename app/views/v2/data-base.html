@@ -1,0 +1,165 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    {{ urlObj.title|safe }} &raquo; Government Commercial
+{% endblock %}
+
+
+
+{% block bodyStart %}
+
+    {#{% include './partials/cookies-banner.njk' %}#}
+
+    {{ govukSkipLink({
+        href: '#gap_home-skip-to',
+        text: 'Skip to main content'
+    }) }}
+
+{% endblock %}
+
+    {#{% block skipLink %}#}
+        {##}
+    {#{% endblock %}#}
+
+{% block header %}
+    {#{% include "../includes/gap/header-nav.njk" %}#}
+
+    {#{% include './partials/basic-header.njk' %}#}
+
+    {% include './partials/new-header-2.njk' %}
+
+
+    <div class="app-width-container">
+        <div class="govuk-width-container" style="border-top: 6px solid #dadada;">
+            {% include "./partials/phase-banner.njk" %}
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ govukBreadcrumbs({
+        items: urlObj.breadCrumbs
+    }) }}
+
+
+
+    {#{% include './partials/logo-banner.njk' %}#}
+
+    {% if urlObj.backLink.show %}
+        {{ govukBackLink({
+            text: 'Back ' + urlObj.backLink.extraText,
+            href: urlObj.backLink.url
+        }) }}
+    {% endif %}
+
+
+
+    {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+    {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+
+
+{% endblock %}
+
+{% block content %}
+
+    {# OLD BACK LINK
+    {% if urlObj.backLink.show %}
+        {{ govukBackLink({
+            text: urlObj.backLinkText,
+            href: "/v2/grants/schemes/landing-detail"
+        }) }}
+    {% endif %}
+    #}
+
+
+    {% if urlObj.url === 'chart-test' %}
+        {% include "./main/data-test.njk" %}
+
+
+        <!-- START: Assessments -->
+        <!-- #1 -->
+        {% elif urlObj.url === 'assessments-overview' %}
+        {% include "./main/assessments-overview.njk" %}
+
+        <!-- #2 -->
+        {% elif urlObj.url === 'assessments-cover-sheet' %}
+        {% include "./main/assessments-cover-sheet.njk" %}
+
+        <!-- #3 -->
+        {% elif urlObj.url === 'assessments-themes' %}
+        {% include "./main/assessments-themes.njk" %}
+
+        {% elif urlObj.url === 'assessments-theme-single' %}
+        {% include "./main/assessments-theme-single.njk" %}
+
+        {% elif urlObj.url === 'assessments-theme-single-summary' %}
+        {% include "./main/assessments-theme-single-summary.njk" %}
+
+        {% elif urlObj.url === 'assessments-theme-single-reports' %}
+        {% include "./main/assessments-theme-single-reports.njk" %}
+
+        <!-- #4 -->
+        {% elif urlObj.url === 'assessments-summary-scores' %}
+        {% include "./main/assessments-summary-scores.njk" %}
+
+        <!-- #5 -->
+        {% elif urlObj.url === 'assessments-reports' %}
+        {% include "./main/assessments-reports.njk" %}
+
+        <!-- #6 -->
+        {% elif urlObj.url === 'assessments-manage-users' %}
+        {% include "./main/assessments-manage-users.njk" %}
+
+        {% elif urlObj.url === 'assessments-manage-user-single' %}
+        {% include "./main/assessments-manage-user-single.njk" %}
+
+
+
+
+        {% elif urlObj.url === 'assessments-theme-5' %}
+        {% include "./main/assessments-theme-5.njk" %}
+
+
+        {% elif urlObj.url === 'assessments-pa-5-1' %}
+        {% include "./main/assessments-pa-5-1.njk" %}
+
+        {% elif urlObj.url === 'my-assessments' %}
+        {% include "./main/assessments-my.njk" %}
+
+        {% elif urlObj.url === 'assessment-detail-radio' %}
+        {% include "main/assessment-detail-radio__OLD_WiP.njk" %}
+
+        {% elif urlObj.url === 'assessments-overview' %}
+        {% include "./main/assessments-overview.njk" %}
+
+        {% elif urlObj.url === 'new-assessment' %}
+        {% include "./main/assessment-new.njk" %}
+
+        {% elif urlObj.url === 'assessment-detail-linked-info' %}
+        {% include "./main/assessment-detail-linked-info.njk" %}
+
+        {% elif urlObj.url === 'assessment-detail-linked-themes' %}
+        {% include "./main/assessment-detail-linked-themes.njk" %}
+
+
+
+
+        {# Practice areas #}
+        {% elif urlObj.url === 'practice-area-detail-radio' %}
+        {% include "./main/practice-area-detail-radio.njk" %}
+
+        {% elif urlObj.url === 'practice-area-detail-radio-ambition' %}
+        {% include "./main/practice-area-detail-radio-ambition.njk" %}
+
+        {% elif urlObj.url === 'practice-area-detail-radio-themes' %}
+        {% include "./main/practice-area-detail-radio-themes.njk" %}
+
+
+    {% endif %}
+
+
+{% endblock %}

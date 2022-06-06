@@ -1,0 +1,145 @@
+
+<style>
+    .s4_nav-test {
+        display: flex;
+        line-height: 30px;
+        margin-bottom: 6px;
+    }
+
+    .s4_nav-link-test {
+        padding-left: 14px;
+        display: flex;
+        flex: 1;
+    }
+
+    .s4_nav-link-test--active {
+        margin-right: -12px;
+    }
+
+    .s4_active-test {
+        font-weight: 600;
+        text-decoration: none;
+        color: #000 !important;
+        list-style-type: none;
+        border-left: 5px solid #1d70b8;
+        display: flex;
+        /*margin-left: -20px;*/
+        padding-left: 14px;
+        background-color: #e3edff;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        flex: 1;
+        clip-path: polygon(0% 0%, 95% 0%, 100% 50%, 95% 100%, 0% 100%);
+    }
+
+    .s4_table-head {
+        background-color: #f7f7f7;
+        border: 1px solid #dadada;
+        border-bottom: 2px solid #000;
+    }
+</style>
+
+<style>
+
+    .gc_bold-text {
+        font-weight: 600;
+    }
+
+    .gc_red-text {
+        color: #d4351c;
+    }
+
+    .gc_orange-text {
+        color: #f47738;
+    }
+
+    .gc_green-text {
+        color: #005a30;
+    }
+
+    .gc_blue-text {
+        color: #1d70b8;
+    }
+
+
+</style>
+
+
+
+
+<div class="govuk-grid-row govuk-!-margin-top-3">
+
+    {% include '../nav/left-nav-assessment.njk' %}
+
+
+    <!-- START: RHS CONTENT @80% -->
+    <div class="govuk-!-margin-bottom-9 govuk-grid-column-three-quarters" style="width: 80%;">
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h1 class="govuk-heading-xl ">Cover sheet</h1>
+
+            </div>
+        </div>
+
+
+        <div class="govuk-grid-row">
+            <div class="" style="padding: 0 15px;">
+                <table class="govuk-table govuk-!-font-size-16">
+                    <caption class="govuk-table__caption govuk-table__caption--m">My assessments</caption>
+                    <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header" width="25%">Name</th>
+                        <th scope="col" class="govuk-table__header" width="30%">Job title</th>
+                        <th scope="col" class="govuk-table__header" width="14%">Email address</th>
+                        <th scope="col" class="govuk-table__header" width="11%">Working on theme(s):</th>
+                        <th scope="col" class="govuk-table__header" width="24%">Status</th>
+                        <th scope="col" class="govuk-table__header" width="6%">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+
+                    <style>
+                        .owner {
+                            background-color: #e7ffac;
+                        }
+                    </style>
+
+                    {% for item in urlObj.themeData %}
+                        <!-- START: THEME LOOP  -->
+                        <tr class="govuk-table__row{% if item.is_owner == 'TRUE' %}
+                                 owner
+                    {% endif %}">
+                            <td class="govuk-table__cell">
+                                {% if item.is_owner == 'TRUE' %}
+                                    <span class="" style="font-weight: 600;">OWNER</span>
+                                    <br /><br />
+                                {% endif %}
+                                <a href="/v2/assessments/manage-users/{{ item.user_id }}">{{ item.name|safe }}</a></td>
+                            <td class="govuk-table__cell">{{ item.job_title|safe }}</td>
+                            <td class="govuk-table__cell">{{ item.email|safe }}</td>
+                            <td class="govuk-table__cell">{{ item.working_on|safe }}</td>
+                            <td class="govuk-table__cell">{{ item.status|safe }}</td>
+                            <td class="govuk-table__cell">
+                                <a href="#" class="">EDIT</a>
+                            </td>
+                            {#<td class="govuk-table__cell gc_bold-text gc_blue-text">{{ item.status|safe }}</td>#}
+                        </tr>
+                    {% endfor %}
+                    <!-- END: THEME LOOP  -->
+
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+
+
+    </div>
+    <!-- END: RHS CONTENT @80% -->
+
+
+    <!-- START:    --->
+
+</div>

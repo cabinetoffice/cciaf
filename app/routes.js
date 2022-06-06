@@ -5,8 +5,10 @@ const router = express.Router();
 // Controllers
 
 const homeManager = require( './controllers/v1/baseController' );
+const homeManager2 = require( './controllers/v2/baseController' );
 
 const dataManager = require( './controllers/v1/dataController' );
+const dataManager2 = require( './controllers/v2/dataController' );
 
 const orgManager = require( './controllers/v1/orgController' );
 
@@ -18,6 +20,7 @@ const orgManager = require( './controllers/v1/orgController' );
 router.get( '/links', homeManager );
 
 router.get( '/v1/home', homeManager );
+router.get( '/v2/home', homeManager2 );
 
 router.get( '/v1/sign-in', homeManager );
 
@@ -40,7 +43,26 @@ router.get( '/v1/submitting-assessment-radios-test', dataManager );
 
 router.get( '/v1/help', homeManager );
 
+//
 router.get( '/v1/assessments', dataManager );
+router.get( '/v2/assessments', dataManager2 );
+
+// new V2 assessment details
+router.get( '/v2/assessments/cover-sheet', dataManager2 );
+router.get( '/v2/assessments/themes', dataManager2 );
+router.get( '/v2/assessments/themes/:themeID', dataManager2 );
+router.get( '/v2/assessments/themes/:themeID/summary', dataManager2 );
+router.get( '/v2/assessments/themes/:themeID/reports', dataManager2 );
+
+
+router.get( '/v2/assessments/summary-scores', dataManager2 );
+router.get( '/v2/assessments/reports', dataManager2 );
+router.get( '/v2/assessments/manage-users', dataManager2 );
+router.get( '/v2/assessments/manage-users/:userID', dataManager2 );
+
+router.get( '/v2/assessments/theme-5', dataManager2 );
+router.get( '/v2/assessments/theme-5/pa-5-1', dataManager2 );
+// router.get( '/v2/assessments/theme-5', dataManager2 );
 
 router.get( '/v1/my-assessments', dataManager );
 

@@ -1,0 +1,141 @@
+
+<div class="govuk-grid-row govuk-!-margin-top-7">
+
+
+    <style>
+        .s4_nav-test {
+            display: flex;
+            line-height: 30px;
+            margin-bottom: 6px;
+        }
+
+        .s4_nav-link-test {
+            padding-left: 14px;
+            display: flex;
+            flex: 1;
+        }
+
+        .s4_nav-link-test--active {
+            margin-right: -12px;
+        }
+
+        .s4_active-test {
+            font-weight: 600;
+            text-decoration: none;
+            color: #000 !important;
+            list-style-type: none;
+            border-left: 5px solid #1d70b8;
+            display: flex;
+            /*margin-left: -20px;*/
+            padding-left: 14px;
+            background-color: #e3edff;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            flex: 1;
+            clip-path: polygon(0% 0%, 95% 0%, 100% 50%, 95% 100%, 0% 100%);
+        }
+
+        .s4_table-head {
+            background-color: #f7f7f7;
+            border: 1px solid #dadada;
+            border-bottom: 2px solid #000;
+        }
+    </style>
+
+    <style>
+
+        .gc_bold-text {
+            font-weight: 600;
+        }
+
+        .gc_red-text {
+            color: #d4351c;
+        }
+
+        .gc_orange-text {
+            color: #f47738;
+        }
+
+        .gc_green-text {
+            color: #005a30;
+        }
+
+        .gc_blue-text {
+            color: #1d70b8;
+        }
+
+
+    </style>
+
+
+
+    {% include '../nav/left-nav-assessment.njk' %}
+
+
+    <!-- START: RHS CONTENT @80% -->
+    <div class="govuk-!-margin-bottom-9 govuk-grid-column-three-quarters" style="width: 80%;">
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h1 class="govuk-heading-xl ">Manage Single user</h1>
+
+            </div>
+        </div>
+
+
+        <div class="govuk-grid-row">
+            hello
+
+            {{ urlObj.userData.name }}
+
+
+
+        </div>
+
+        <div class="govuk-grid-column-three-quarters">
+            <div class="">
+                <button class="govuk-button" data-module="govuk-button">
+                    Save change
+                </button>
+
+
+
+            </div>
+
+            <div class="">
+                <p class="govuk-hint">Archiving a scheme is the preferred way to remove a scheme from your everyday workflow.</p>
+                <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Archive scheme
+                </button>
+
+
+            </div>
+
+            <div class="">
+
+                <p class="govuk-hint">You can request to have a scheme deleted but this is a manual process and will require authorisation from the SOR. It should only be executed in extreme circumstances.</p>
+                <button class="govuk-button govuk-button--warning" data-module="govuk-button">
+                    Delete scheme
+                </button>
+
+
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+    <!-- END: RHS CONTENT @80% -->
+
+
+    <!-- START: MODIFY --->
+
+
+
+
+
+
+
+</div>

@@ -1,0 +1,210 @@
+<div class="govuk-grid-row">
+
+
+    <style>
+        .s4_nav-test {
+            display: flex;
+            line-height: 30px;
+            margin-bottom: 6px;
+        }
+
+        .s4_nav-link-test {
+            padding-left: 14px;
+            display: flex;
+            flex: 1;
+        }
+
+        .s4_nav-link-test--active {
+            margin-right: -12px;
+        }
+
+        .s4_active-test {
+            font-weight: 600;
+            text-decoration: none;
+            color: #000 !important;
+            list-style-type: none;
+            border-left: 5px solid #1d70b8;
+            display: flex;
+            /*margin-left: -20px;*/
+            padding-left: 14px;
+            background-color: #e3edff;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            flex: 1;
+        }
+
+        .s4_table-head {
+            background-color: #f7f7f7;
+            border: 1px solid #dadada;
+            border-bottom: 2px solid #000;
+        }
+    </style>
+
+
+    {% include '../nav/left-nav-assessment-theme-5.njk' %}
+
+
+
+    <!-- START: RHS CONTENT @80% -->
+    <div class="govuk-!-margin-bottom-9 govuk-grid-column-three-quarters" style="width: 80%;">
+
+
+
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Theme 5</h1>
+
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-7">
+            Assessment ID: HOME-234567
+        </h2>
+
+
+        <span class="govuk-heading-m app-task-list__section-number govuk-!-margin-bottom-7">5.  Commercial Lifecycle Manage: contract management</span>
+
+
+
+        <div class="govuk-!-width-full">
+
+            <h1 class="govuk-heading-xl">Bar chart</h1>
+        </div>
+
+        <div class="govuk-!-width-full">
+
+
+            <div class="govuk-!-width-two-thirds">
+                <canvas id="myChart2" width="400" height="300"></canvas>
+                <script>
+                    var ctx2 = document.getElementById('myChart2').getContext('2d');
+                    var myChart2 = new Chart(ctx2, {
+                        type: 'bar',
+                        data: {
+                            labels: [
+                                '5.1 - Contract mobilisation and transition',
+                                '5.2 - Managing delivery and performance',
+                                '5.3 - Managing contract risk',
+                                '5.4 - Supply chain, inventory management / stock control (NHS Only)',
+                                '5.5 - Supply chain, logistics (NHS Only)',
+                                // 'Orange'
+                            ],
+                            datasets: [{
+                                label: 'Performance %',
+                                data: [12, 19, 3, 5, 2, 3],
+                                backgroundColor: [
+                                    'rgba(212, 53, 28, 0.4)',
+                                    'rgba(29, 112, 184, 0.4)',
+                                    'rgba(213, 56, 128, 0.4)',
+                                    'rgba(0, 112, 60, 0.4)',
+                                    'rgba(76, 44, 146, 0.4)',
+                                    //'rgba(244, 119, 56, 0.4)'
+                                ],
+                                borderColor: [
+                                    'rgba(212, 53, 28, 1)',
+                                    'rgba(29, 112, 184, 1)',
+                                    'rgba(213, 56, 128, 1)',
+                                    'rgba(0, 112, 60, 1)',
+                                    'rgba(76, 44, 146, 1)',
+                                    //'rgba(244, 119, 56, 1)'
+                                ],
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                yAxes: [{
+                                    ticks: {
+                                        beginAtZero: true,
+                                        fontSize: 20
+                                    }
+                                }]
+                            },
+                            plugins: {
+                                legend: {
+                                    labels: {
+                                        // This more specific font property overrides the global property
+                                        font: {
+                                            size: 24
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    });
+                </script>
+            </div>
+
+        </div>
+
+
+
+        <!-- START: OTHER TABLES -->
+
+        <div class="govuk-!-margin-top-9">
+            <ol class="app-task-list">
+
+
+                <!-- START: THEME 5 -->
+                <li>
+                    <h2 class="app-task-list__section">
+                        <span class="app-task-list__section-number">5. </span> Commercial Lifecycle Manage: contract management
+                    </h2>
+                    <ul class="app-task-list__items">
+                        <li class="app-task-list__item">
+                    <span class="">
+                        <a href="#" aria-describedby="eligibility-status">
+                            5.1 - Contract mobilisation and transition
+                        </a>
+                    </span>
+                            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">NOT STARTED</strong>
+                        </li>
+
+                        <li class="app-task-list__item">
+                    <span class="">
+                        <a href="#" aria-describedby="eligibility-status">
+                            5.2 - Managing delivery and performance
+                        </a>
+                    </span>
+                            <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+                        </li>
+
+                        <li class="app-task-list__item">
+                    <span class="">
+                        <a href="#" aria-describedby="eligibility-status">
+                            5.3 - Managing contract risk
+                        </a>
+                    </span>
+                            <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+                        </li>
+
+                        <li class="app-task-list__item">
+                    <span class="">
+                        <a href="#" aria-describedby="eligibility-status">
+                            5.4 - Supply chain, inventory management / stock control (NHS Only)
+                        </a>
+                    </span>
+                            <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+                        </li>
+
+                        <li class="app-task-list__item">
+                    <span class="">
+                        <a href="#" aria-describedby="eligibility-status">
+                            5.5 - Supply chain, logistics (NHS Only)
+                        </a>
+                    </span>
+                            <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+                        </li>
+
+
+                    </ul>
+                </li>
+                <!-- END: THEME 5 -->
+
+            </ol>
+
+        </div>
+
+
+    </div>
+    <!-- END: RHS CONTENT @80% -->
+
+
+    <!-- START:    --->
+
+</div>

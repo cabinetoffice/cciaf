@@ -1,1 +1,70 @@
-hfghfghgf
+<!-- moved styles to sass -->
+
+<div class="govuk-grid-row govuk-!-margin-top-3">
+
+    {% if urlObj.testVersion === 'a' %}
+        {% include '../nav/left-nav-assessment.njk' %}
+    {% elif urlObj.testVersion === 'b' %}
+        {% include '../nav/left-nav-assessments-B-themes-open.njk' %}
+    {% endif %}
+
+    <!-- START: RHS CONTENT @80% -->
+    <div class="govuk-!-margin-bottom-9 govuk-grid-column-three-quarters" style="width: 80%;">
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-three-quarters">
+                <h1 class="govuk-heading-xl ">Theme details: 1 to 8</h1>
+
+            </div>
+        </div>
+
+        <div class="govuk-grid-row">
+            <ul class="govuk-list" style="padding: 0 15px;">
+
+                <li class="govuk-!-margin-bottom-8">
+                    {% include './theme-tables/theme-details-1.njk' %}
+                </li>
+
+                <li class="govuk-!-margin-bottom-8">
+                    {% include './theme-tables/theme-details-2.njk' %}
+                </li>
+
+                <li class="govuk-!-margin-bottom-8">
+                    {% include './theme-tables/theme-details-3.njk' %}
+                </li>
+
+                <li class="govuk-!-margin-bottom-8">
+                    {% include './theme-tables/theme-details-4.njk' %}
+                </li>
+
+                <li class="govuk-!-margin-bottom-8">
+                    {% include './theme-tables/theme-details-5.njk' %}
+                </li>
+
+                <li class="govuk-!-margin-bottom-8">
+                    {% include './theme-tables/theme-details-6.njk' %}
+                </li>
+
+                <li class="govuk-!-margin-bottom-8">
+                    {% include './theme-tables/theme-details-7.njk' %}
+                </li>
+
+                <li class="govuk-!-margin-bottom-8">
+                    {% include './theme-tables/theme-details-8.njk' %}
+                </li>
+
+                <li class="govuk-!-margin-bottom-8">
+                    {% include './theme-tables/pa-test.njk' %}
+                </li>
+
+            </ul>
+        </div>
+
+
+    </div>
+    <!-- END: RHS CONTENT @80% -->
+
+
+    <!-- START:    --->
+
+</div>

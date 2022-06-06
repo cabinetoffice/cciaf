@@ -1,0 +1,59 @@
+<nav class="govuk-grid-column-one-quarter" style="width: 20%;margin-top: 2px;">
+    <div class="" style="border-bottom: 4px solid #000000;display: flex;">
+        {#<img src="/public/images/menu-24.png" alt="" style="display: inline-flex;">#}
+        <span class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">Assessment Menu</span>
+
+    </div>
+
+    <ul class="" style="display: flex;list-style: none;padding-left: 0;flex-direction: column;">
+
+        {#<li class="s4_nav-test s4_nav-link-test--active">#}
+            {#<a class="s4_active-test" href="#" style="">Overview</a>#}
+        {#</li>#}
+
+
+        {#<li class="s4_nav-test#}
+            {#{% if urlObj.url == 'assessments-overview' %}s4_nav-link-test--active{% endif %}">#}
+            {#<a class="s4_nav-link-test#}
+                {#{% if urlObj.url == 'assessments-overview' %}s4_active-test{% endif %}"                                             href="/v2/assessments">Overview</a>#}
+        {#</li>#}
+
+        <li class="s4_nav-test
+            {% if urlObj.url == 'assessments-overview' %}s4_nav-link-test--active{% endif %}">
+            <a class="s4_nav-link-test
+                {% if urlObj.url == 'assessments-overview' %}s4_active-test{% endif %}" href="/v2/assessments?test=a">Assessment overview</a>
+        </li>
+        <li class="s4_nav-test
+            {% if urlObj.url == 'assessments-cover-sheet' %}s4_nav-link-test--active{% endif %}">
+            <a class="s4_nav-link-test
+                {% if urlObj.url == 'assessments-cover-sheet' %}s4_active-test{% endif %}" href="/v2/assessments/cover-sheet?test=a">Cover sheet</a>
+        </li>
+
+        <li class="s4_nav-test
+            {% if urlObj.url == 'assessments-themes' %}s4_nav-link-test--active{% endif %}">
+            <a class="s4_nav-link-test
+                {% if urlObj.url == 'assessments-themes' %}s4_active-test{% endif %}" href="/v2/assessments/themes?test=a">Themes: 1 to 8</a>
+        </li>
+
+        <li class="s4_nav-test
+            {% if urlObj.url == 'assessments-summary-scores' %}s4_nav-link-test--active{% endif %}">
+            <a class="s4_nav-link-test
+                {% if urlObj.url == 'assessments-summary-scores' %}s4_active-test{% endif %}" href="/v2/assessments/summary-scores?test=a">Summary and scores</a>
+        </li>
+
+        <li class="s4_nav-test
+            {% if urlObj.url == 'assessments-reports' %}s4_nav-link-test--active{% endif %}">
+            <a class="s4_nav-link-test
+                {% if urlObj.url == 'assessments-reports' %}s4_active-test{% endif %}" href="/v2/assessments/reports?test=a">Reports</a>
+        </li>
+        <li class="s4_nav-test
+            {% if urlObj.url == 'assessments-manage-users' %}s4_nav-link-test--active{% endif %}">
+            <a class="s4_nav-link-test
+                {% if (urlObj.url == 'assessments-manage-users')
+                    or (urlObj.url == 'assessments-manage-user-single') %}s4_active-test{% endif %}" href="/v2/assessments/manage-users?test=a">Manage users</a>
+        </li>
+
+
+
+    </ul>
+</nav>

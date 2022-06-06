@@ -1,0 +1,239 @@
+
+
+
+
+
+
+<div class="govuk-grid-row govuk-!-margin-top-7">
+
+
+    <style>
+        .s4_nav-test {
+            display: flex;
+            line-height: 30px;
+            margin-bottom: 6px;
+        }
+
+        .s4_nav-link-test {
+            padding-left: 14px;
+            display: flex;
+            flex: 1;
+        }
+
+        .s4_nav-link-test--active {
+            margin-right: -12px;
+        }
+
+        .s4_active-test {
+            font-weight: 600;
+            text-decoration: none;
+            color: #000 !important;
+            list-style-type: none;
+            border-left: 5px solid #1d70b8;
+            display: flex;
+            /*margin-left: -20px;*/
+            padding-left: 14px;
+            background-color: #e3edff;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            flex: 1;
+        }
+
+        .s4_table-head {
+            background-color: #f7f7f7;
+            border: 1px solid #dadada;
+            border-bottom: 2px solid #000;
+        }
+    </style>
+
+    <style>
+
+        .gc_bold-text {
+            font-weight: 600;
+        }
+
+        .gc_red-text {
+            color: #d4351c;
+        }
+
+        .gc_orange-text {
+            color: #f47738;
+        }
+
+        .gc_green-text {
+            color: #005a30;
+        }
+
+        .gc_blue-text {
+            color: #1d70b8;
+        }
+
+
+    </style>
+
+
+
+    {% include '../nav/left-nav-assessment.njk' %}
+
+
+    <!-- START: RHS CONTENT @80% -->
+    <div class="govuk-!-margin-bottom-9 govuk-grid-column-three-quarters" style="width: 80%;">
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h1 class="govuk-heading-xl ">Assessment overview</h1>
+
+            </div>
+        </div>
+
+
+        <div class="govuk-grid-row">
+            <table class="govuk-table govuk-!-font-size-16">
+                <caption class="govuk-table__caption govuk-table__caption--m">My assessments</caption>
+                <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-half">Theme</th>
+                    <th scope="col" class="govuk-table__header">Assigned to:</th>
+                    <th scope="col" class="govuk-table__header">Sub tasks</th>
+                    <th scope="col" class="govuk-table__header">Percentage complete (%)</th>
+                    <th scope="col" class="govuk-table__header">Status</th>
+                </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+
+                {% for item in urlObj.themeData %}
+
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">
+                            <a href="#" class="govuk-link">{{ item.theme_id|safe }}. {{ item.theme_name|safe }}</a></td>
+                        <td class="govuk-table__cell">{{ item.assigned_to|safe }}</td>
+                        <td class="govuk-table__cell">{{ item.sub_tasks|safe }}</td>
+                        <td class="govuk-table__cell">{{ item.pc_complete|safe }}%</td>
+                        <td class="govuk-table__cell gc_bold-text gc_blue-text">{{ item.status|safe }}</td>
+                    </tr>
+                {% endfor %}
+                <!-- START: THEME 1  -->
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">1. Commercial Lifecycle Procure: procurement and contracting</a></td>
+                    <td class="govuk-table__cell">Christopheles Niacaraguazenbrth</td>
+                    <td class="govuk-table__cell">42</td>
+                    <td class="govuk-table__cell">75%</td>
+                    <td class="govuk-table__cell gc_bold-text gc_blue-text">IN PROGRESS</td>
+                </tr>
+                <!-- START: THEME 2  -->
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">2. Commercial Capability and Resourcing</a></td>
+                    <td class="govuk-table__cell">Christopheles Niacaraguazenbrth</td>
+                    <td class="govuk-table__cell">24</td>
+                    <td class="govuk-table__cell">0%</td>
+                    <td class="govuk-table__cell gc_bold-text gc_red-text">NOT STARTED</td>
+                </tr>
+                <!-- START: THEME 3  -->
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">3. Commercial Lifecycle Define: pre-procurement</a></td>
+                    <td class="govuk-table__cell">Christopheles Niacaraguazenbrth</td>
+                    <td class="govuk-table__cell">28</td>
+                    <td class="govuk-table__cell">0%</td>
+                    <td class="govuk-table__cell gc_bold-text gc_red-text">NOT STARTED</td>
+                </tr>
+                <!-- START: THEME 4  -->
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">4. Commercial Lifecycle Procure: procurement and contracting</a></td>
+                    <td class="govuk-table__cell">Christopheles Niacaraguazenbrth</td>
+                    <td class="govuk-table__cell">26</td>
+                    <td class="govuk-table__cell">100%</td>
+                    <td class="govuk-table__cell gc_bold-text gc_green-text">COMPLETED</td>
+                </tr>
+                <!-- START: THEME 5  -->
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">5. Commercial Lifecycle Manage: contract management</a></td>
+                    <td class="govuk-table__cell">Christopheles Niacaraguazenbrth</td>
+                    <td class="govuk-table__cell">56</td>
+                    <td class="govuk-table__cell">50%</td>
+                    <td class="govuk-table__cell gc_bold-text gc_blue-text">IN PROGRESS</td>
+                </tr>
+                <!-- START: THEME 6  -->
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">6. Managing Categories, Markets and Supplier Relations</a></td>
+                    <td class="govuk-table__cell">Christopheles Niacaraguazenbrth</td>
+                    <td class="govuk-table__cell">18</td>
+                    <td class="govuk-table__cell">0%</td>
+                    <td class="govuk-table__cell gc_bold-text gc_red-text">NOT STARTED</td>
+                </tr>
+                <!-- START: THEME 7  -->
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">7. Commercial systems, reporting and information</a></td>
+                    <td class="govuk-table__cell">Christopheles Niacaraguazenbrth</td>
+                    <td class="govuk-table__cell">32</td>
+                    <td class="govuk-table__cell">100%</td>
+                    <td class="govuk-table__cell gc_bold-text gc_green-text">COMPLETED</td>
+                </tr>
+                <!-- START: THEME 8 -->
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">8. Policy</a></td>
+                    <td class="govuk-table__cell">35</td>
+                    <td class="govuk-table__cell">100%</td>
+                    <td class="govuk-table__cell gc_bold-text gc_green-text">COMPLETED</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+
+    </div>
+    <!-- END: RHS CONTENT @80% -->
+
+
+    <!-- START:    --->
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="govuk-grid-row">
+    <div class="" style="padding: 0 15px;">
+        <table class="govuk-table govuk-!-font-size-16">
+            <caption class="govuk-table__caption govuk-table__caption--m">My assessments</caption>
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header" width="45%">Practice Area</th>
+                <th scope="col" class="govuk-table__header">Criteria</th>
+                <th scope="col" class="govuk-table__header">Percentage complete (%)</th>
+                <th scope="col" class="govuk-table__header" width="14%">Status</th>
+            </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+
+            {% for item in urlObj.themeData %}
+                <!-- START: THEME LOOP  -->
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                        <strong>{{ item.theme_id|safe }}.</strong>
+                        <a href="#" class="govuk-link">{{ item.theme_name|safe }}</a></td>
+
+                    <td class="govuk-table__cell">{{ item.sub_tasks|safe }}</td>
+                    <td class="govuk-table__cell">{{ item.pc_complete|safe }}%</td>
+                    <td class="govuk-table__cell">
+                        <strong class="govuk-tag app-task-list__tag
+                            {% if item.status == 'IN PROGRESS' %}
+                            govuk-tag--blue
+                            {% elif item.status == 'NOT STARTED' %} govuk-tag--grey
+                            {% endif %}" id="eligibility-status">{{ item.status|safe }}</strong>
+                    </td>
+                    {#<td class="govuk-table__cell gc_bold-text gc_blue-text">{{ item.status|safe }}</td>#}
+                </tr>
+            {% endfor %}
+            <!-- END: THEME LOOP  -->
+
+            </tbody>
+        </table>
+    </div>
+</div>

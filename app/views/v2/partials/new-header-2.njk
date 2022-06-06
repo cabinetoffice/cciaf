@@ -1,0 +1,156 @@
+<style>
+
+    .govuk-header__container {
+        border-bottom: 0;
+    }
+
+
+    .plus-test::after {
+        display: inline-block;
+        vertical-align: middle;
+        border-radius: 50%;
+        width: 16px;
+        height: 16px;
+        background-image: linear-gradient(black, black), linear-gradient(black, black);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 20% 70%, 70% 20%;
+        position: relative;
+        margin-left: 6px;
+        top: -2px;
+        content: "";
+    }
+</style>
+
+<style>
+
+
+
+</style>
+
+
+<header class="govuk-header " role="banner" data-module="govuk-header" style="border-bottom: none;">
+    <div class="govuk-header__container govuk-width-container">
+
+        <div class="s4_header__official-banner">OFFICIAL - SENSITIVE</div>
+
+        <div class="govuk-header__logo s4_header__left-block">
+            <div class="s4_header__logo">
+                <img src="/public/images/uk-government-crown-crest-logo-WHT.png" alt="UK Government crest" class="s4_header__logo-crest">
+                <span class="s4_header__logo-title">Government Commercial Function</span>
+            </div>
+        </div>
+
+        <div class="govuk-header__content s4_header__right-block">
+
+            <a href="#" class="govuk-header__link govuk-header__link--service-name s4_header__service-name">
+                CCIAF Scoring Tool
+            </a>
+
+            {#
+            @TODO - @Kane - this whole mobile nav menu will be redone - DO NOT USE THIS!!!
+            #}
+            <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide navigation menu" aria-expanded="false">Menu</button>
+
+            <nav class="s4_top-nav__menu">
+                <ul id="navigation" class="govuk-header__navigation s4_top-nav__item-list" aria-label="Navigation menu">
+                    <li class="govuk-header__navigation-item s4_top-nav__item
+                        {% if urlObj.nav === 'home' %}s4_top-nav__item--active{% endif %}">
+                        <a href="/v1/home">Home</a>
+                    </li>
+
+                    <!-- START: current active Nav Item + SUB NAV -->
+                    <!-- ============================================ -->
+                    <li class="govuk-header__navigation-item s4_top-nav__item
+                    {% if urlObj.nav === 'assess' %}s4_top-nav__item--active{% endif %}">
+                        <a href="/v1/assessments">Assessments</a>
+                        <ul class="s4_top-nav__sub-item-list">
+                            <!-- IS ACTIVE -->
+                            <li class="s4_top-nav__sub-item {% if urlObj.subNav === 'overview' %}s4_top-nav__sub-item--active{% endif %}">
+                                <a href="/v1/assessments">
+                                    Current assessment
+                                </a>
+                            </li>
+                            <li class="s4_top-nav__sub-item
+                                {% if urlObj.subNav === 'my-assess' %}s4_top-nav__sub-item--active{% endif %}">
+                                <a href="/v1/my-assessments">
+                                    Previous assessments
+                                </a>
+                            </li>
+                            <li class="s4_top-nav__sub-item
+                                {% if urlObj.subNav === 'peer-assess' %}s4_top-nav__sub-item--active{% endif %}">
+                                <a href="#">
+                                    Sub-organisation assessments
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- END: current active Nav Item -->
+
+                    <li class="govuk-header__navigation-item s4_top-nav__item
+                    {% if urlObj.nav === 'orgs' %}s4_top-nav__item--active{% endif %}">
+                        <a href="/v1/organisations">External peer reviews</a>
+                        <ul class="s4_top-nav__sub-item-list">
+                            <!-- IS ACTIVE -->
+                            <li class="s4_top-nav__sub-item
+                                {% if urlObj.subNav === 'overview' %}s4_top-nav__sub-item--active{% endif %}">
+                                <a href="/v1/organisations">
+                                    Overview
+                                </a>
+                            </li>
+                            <li class="s4_top-nav__sub-item
+                                {% if urlObj.subNav === 'my-org' %}s4_top-nav__sub-item--active{% endif %}">
+                                <a href="/v1/my-organisation">
+                                    My organisation
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="govuk-header__navigation-item s4_top-nav__item">
+                        <a href="#">Notifications</a>
+                    </li>
+
+                    <li class="govuk-header__navigation-item s4_top-nav__item
+                    {% if urlObj.nav === 'help' %}s4_top-nav__item--active{% endif %}"
+                        style="margin-left: auto;">
+                        <a class="govuk-header__link" href="/v1/help">Help</a>
+                        <ul class="s4_top-nav__sub-item-list">
+                            <!-- IS ACTIVE -->
+                            <li class="s4_top-nav__sub-item s4_top-nav__sub-item--active">
+                                <a href="#">
+                                    Glossary
+                                </a>
+                            </li>
+                            <li class="s4_top-nav__sub-item">
+                                <a href="#">
+                                    How to guide
+                                </a>
+                            </li>
+                            <li class="s4_top-nav__sub-item">
+                                <a href="#">
+                                    Contact us
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    <li class="govuk-header__navigation-item s4_top-nav__item
+                        {% if urlObj.nav === 'account' %}s4_top-nav__item--active{% endif %}"
+                        style="align-self: revert;">
+                        {% if urlObj.loggedIn %}
+                            <a class="govuk-header__link" href="#">Sign out</a>
+                        {% else %}
+                            <a class="govuk-header__link" href="/v1/sign-in">Sign in / Register</a>
+                        {% endif %}
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+
+    </div>
+    <div class="s4_top-nav__sub-item-bar {% if ( urlObj.nav === 'home' ) or ( urlObj.nav === 'account' ) %} s4_top-nav__sub-item-bar--hidden {% endif %}"></div>
+
+</header>
