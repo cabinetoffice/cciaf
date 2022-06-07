@@ -1,0 +1,54 @@
+<!-- moved styles to sass -->
+
+<div class="govuk-grid-row govuk-!-margin-top-3">
+
+    {% if urlObj.testVersion === 'a' %}
+        {% include '../nav/left-nav-assessment.njk' %}
+        {% elif urlObj.testVersion === 'b' %}
+        {% include '../nav/left-nav-assessments-B-themes-open.njk' %}
+    {% endif %}
+
+    <!-- START: RHS CONTENT @80% -->
+    <div class="govuk-!-margin-bottom-9 govuk-grid-column-three-quarters" style="width: 80%;">
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-three-quarters">
+                <h1 class="govuk-heading-xl ">Practice areas: 5.1 to 5.5</h1>
+
+            </div>
+        </div>
+
+        <div class="govuk-grid-row">
+            <ul class="govuk-list" style="padding: 0 15px;">
+
+                <li class="govuk-!-margin-bottom-8">
+                    {% include './theme-tables/pa-test.njk' %}
+                </li>
+
+                <li class="govuk-!-margin-bottom-8">
+                    {% include './theme-tables/pa-test.njk' %}
+                </li>
+
+                <li class="govuk-!-margin-bottom-8">
+                    {% include './theme-tables/pa-test.njk' %}
+                </li>
+
+                <li class="govuk-!-margin-bottom-8">
+                    {% include './theme-tables/pa-test.njk' %}
+                </li>
+
+                <li class="govuk-!-margin-bottom-8">
+                    {% include './theme-tables/pa-test.njk' %}
+                </li>
+
+            </ul>
+        </div>
+
+
+    </div>
+    <!-- END: RHS CONTENT @80% -->
+
+
+    <!-- START:    --->
+
+</div>

@@ -32,7 +32,10 @@ module.exports =  function grid( req, res ) {
         C: 'assigned_to',
         D: 'sub_tasks',
         E: 'pc_complete',
-        F: 'status'
+        F: 'status',
+        G: 'overall_rating',
+        H: 'overall_score',
+        I: 'average'
     };
     let usersColumnKey = {
         A: 'user_id',
@@ -187,13 +190,13 @@ module.exports =  function grid( req, res ) {
                 { text: 'Home', href: "/home3-descoped" },
                 { text: 'Assessments', href: "/v1/grants" },
                 { text: 'Current assessment', href: "/v1/grants" },
-                { text: 'Manage users', href: "#" },
-                { text: 'Manage user: UserName GoesHere', href: "" }
+                { text: 'Themes', href: "#" },
+                { text: `Theme ${themeId}`, href: "" }
             ],
             backLink: {
                 show: true,
-                extraText: 'to Manage Users',
-                url: '/v2/assessments/manage-users'
+                extraText: 'to Assessment',
+                url: '/v2/assessments/themes?test=a'
             },
             themeData: importUsers,
             userData: item
@@ -263,6 +266,64 @@ module.exports =  function grid( req, res ) {
 
     // START:: Assessments -> THEMES SINGLE SUMMARY PAGE
     else if (( baseUrl === `/v2/assessments/themes/${themeId}` )
+        || ( baseUrl === `/v2/assessments/themes/${themeId}/practice-areas?test=${query.test}` )) {
+
+        console.log('got the numberoooooo', userId);
+
+        /* this is where we gather the grants data */
+        const importContent = excelToJson({
+            sourceFile: './public/data/gov_comm_content_db_v2.xlsx',
+            columnToKey: usersColumnKey,
+            header: {
+                rows: 1
+            }
+        });
+
+        let importUsers = importContent.users;
+
+        console.log('THE USER ARRAY', importUsers );
+
+        //var item = importUsers.find(item => item.user_id === parseInt(userId) );
+
+        console.log('THE ITEM', item);
+
+        let singleUser = importUsers[userId];
+
+        console.log('USR SING', importUsers[userId]);
+
+        //let myNewID = importUsers.findIndex(x => x.user_id === userId );
+
+        let myNEWPuppy = importUsers.find(x => x.user_id === userId);
+
+        console.log('GET ITTTT??', myNEWPuppy);
+
+        urlObj = {
+            url: `assessments-theme-single-practice-areas`,
+            nav: 'assess',
+            subNav: 'overview',
+            title: `Current Assessment - Theme ${themeId} &raquo; Summary`,
+            breadCrumbs: [
+                { text: 'Home', href: "/home3-descoped" },
+                { text: 'Assessments', href: "/v1/grants" },
+                { text: 'Current assessment', href: "/v1/grants" },
+                { text: 'Manage users', href: "#" },
+                { text: 'Manage user: UserName GoesHere', href: "" }
+            ],
+            backLink: {
+                show: true,
+                extraText: 'to Themes',
+                url: '/v2/assessments/manage-users'
+            },
+            themeData: importUsers,
+            userData: item
+        };
+
+        return res.render('v2/data-base', { urlObj } );
+
+    }
+
+    // START:: Assessments -> THEMES SINGLE SUMMARY PAGE
+    else if (( baseUrl === `/v2/assessments/themes/${themeId}` )
         || ( baseUrl === `/v2/assessments/themes/${themeId}/reports?test=${query.test}` )) {
 
         console.log('got the numberoooooo', userId);
@@ -303,8 +364,8 @@ module.exports =  function grid( req, res ) {
                 { text: 'Home', href: "/home3-descoped" },
                 { text: 'Assessments', href: "/v1/grants" },
                 { text: 'Current assessment', href: "/v1/grants" },
-                { text: 'Manage users', href: "#" },
-                { text: 'Manage user: UserName GoesHere', href: "" }
+                { text: 'Themes', href: "#" },
+                { text: `These ${themeId}`, href: "" }
             ],
             backLink: {
                 show: true,
@@ -527,7 +588,7 @@ module.exports =  function grid( req, res ) {
         console.log('here is the list', content);
 
         //let spok = content.Sheet1;
-        let spok = content.pa_5;
+        let spok = content.cr_5;
         // console.log("spok data", spok);
         console.log("this is the trimmed ", spok);
 

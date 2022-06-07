@@ -65,6 +65,12 @@
                     {% if urlObj.nav === 'assess' %}s4_top-nav__item--active{% endif %}">
                         <a href="/v1/assessments">Assessments</a>
                         <ul class="s4_top-nav__sub-item-list">
+                            <li class="s4_top-nav__sub-item
+                                {% if urlObj.subNav === 'my-assess' %}s4_top-nav__sub-item--active{% endif %}">
+                                <a href="/v1/my-assessments">
+                                    About the CCIAF tool
+                                </a>
+                            </li>
                             <!-- IS ACTIVE -->
                             <li class="s4_top-nav__sub-item {% if urlObj.subNav === 'overview' %}s4_top-nav__sub-item--active{% endif %}">
                                 <a href="/v1/assessments">

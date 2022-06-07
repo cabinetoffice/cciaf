@@ -117,7 +117,7 @@
                     {% endif %}">
                             <td class="govuk-table__cell">
                                 {% if item.is_owner == 'TRUE' %}
-                                <span class="" style="font-weight: 600;">OWNER</span>
+                                <span class="" style="font-weight: 600;">OWNER / APPROVER</span>
                                 <br /><br />
                                 {% endif %}
                                 <a href="/v2/assessments/manage-users/{{ item.user_id }}">{{ item.name|safe }}</a></td>

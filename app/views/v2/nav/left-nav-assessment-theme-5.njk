@@ -6,24 +6,33 @@
 
     <ul class="" style="display: flex;list-style: none;padding-left: 0;flex-direction: column;">
 
-        <li class="s4_nav-test"><a class="s4_nav-link-test" href="#">Theme overview</a></li>
-        <li class="s4_nav-test s4_nav-link-test--active"><a class="s4_active-test" href="#" style="clip-path: polygon(0% 0%, 95% 0%, 100% 50%, 95% 100%, 0% 100%);">Summary</a>
+
+        <li class="s4_nav-test
+            {% if urlObj.url == 'assessments-theme-single' %}s4_nav-link-test--active{% endif %}">
+            <a class="s4_nav-link-test
+                {% if urlObj.url == 'assessments-theme-single' %}s4_active-test{% endif %}" href="/v2/assessments/themes/5?test=a">Theme overview</a>
         </li>
 
 
+        <li class="s4_nav-test
+            {% if urlObj.url == 'assessments-theme-single-summary' %}s4_nav-link-test--active{% endif %}">
+            <a class="s4_nav-link-test
+                {% if urlObj.url == 'assessments-theme-single-summary' %}s4_active-test{% endif %}" href="/v2/assessments/themes/5/summary?test=a">Theme summary</a>
+        </li>
 
-        <li class="s4_nav-test"><a class="s4_nav-link-test" href="#">Practice Areas: 5.1 to 5.3</a></li>
+
+        {#<li class="s4_nav-test"><a class="s4_nav-link-test" href="#">Practice Areas: 5.1 to 5.5</a></li>#}
 
         <li class="s4_nav-test
-            {% if urlObj.url == '' %}s4_nav-link-test--active{% endif %}">
+            {% if urlObj.url == 'assessments-theme-single-practice-areas' %}s4_nav-link-test--active{% endif %}">
             <a class="s4_nav-link-test
-                {% if urlObj.url == '' %}s4_active-test{% endif %}" href="/v2/assessments/reports?test=a">Practice areas</a>
+                {% if urlObj.url == 'assessments-theme-single-practice-areas' %}s4_active-test{% endif %}" href="/v2/assessments/themes/5/practice-areas?test=a">Practice Areas: 5.1 to 5.5</a>
         </li>
 
         <li class="s4_nav-test
             {% if urlObj.url == 'assessments-theme-single-reports' %}s4_nav-link-test--active{% endif %}">
             <a class="s4_nav-link-test
-                {% if urlObj.url == 'assessments-theme-single-reports' %}s4_active-test{% endif %}" href="/v2/assessments/reports?test=a">Reports</a>
+                {% if urlObj.url == 'assessments-theme-single-reports' %}s4_active-test{% endif %}" href="/v2/assessments/reports?test=a">Reports and charts</a>
         </li>
     </ul>
 </nav>

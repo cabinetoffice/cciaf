@@ -1,70 +1,4 @@
-
-<style>
-    .s4_nav-test {
-        display: flex;
-        line-height: 30px;
-        margin-bottom: 6px;
-    }
-
-    .s4_nav-link-test {
-        padding-left: 14px;
-        display: flex;
-        flex: 1;
-    }
-
-    .s4_nav-link-test--active {
-        margin-right: -12px;
-    }
-
-    .s4_active-test {
-        font-weight: 600;
-        text-decoration: none;
-        color: #000 !important;
-        list-style-type: none;
-        border-left: 5px solid #1d70b8;
-        display: flex;
-        /*margin-left: -20px;*/
-        padding-left: 10px;
-        background-color: #e3edff;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        flex: 1;
-        clip-path: polygon(0% 0%, 95% 0%, 100% 50%, 95% 100%, 0% 100%);
-    }
-
-    .s4_table-head {
-        background-color: #f7f7f7;
-        border: 1px solid #dadada;
-        border-bottom: 2px solid #000;
-    }
-</style>
-
-<style>
-
-    .gc_bold-text {
-        font-weight: 600;
-    }
-
-    .gc_red-text {
-        color: #d4351c;
-    }
-
-    .gc_orange-text {
-        color: #f47738;
-    }
-
-    .gc_green-text {
-        color: #005a30;
-    }
-
-    .gc_blue-text {
-        color: #1d70b8;
-    }
-
-
-</style>
-
-
+<!-- styles moved to sass -->
 
 
 <div class="govuk-grid-row govuk-!-margin-top-3">
@@ -88,11 +22,10 @@
                     <caption class="govuk-table__caption govuk-table__caption--m">My assessments</caption>
                     <thead class="govuk-table__head">
                     <tr class="govuk-table__row">
-                        <th scope="col" class="govuk-table__header" width="45%">Theme</th>
-                        <th scope="col" class="govuk-table__header">Assigned to:</th>
-                        <th scope="col" class="govuk-table__header">Criteria</th>
-                        <th scope="col" class="govuk-table__header">Percentage complete (%)</th>
-                        <th scope="col" class="govuk-table__header" width="14%">Status</th>
+                        <th scope="col" class="govuk-table__header" width="55%">Theme</th>
+                        <th scope="col" class="govuk-table__header" width="15%">Overall rating</th>
+                        <th scope="col" class="govuk-table__header" width="15%">Overall score</th>
+                        <th scope="col" class="govuk-table__header" width="15%">Average</th>
                     </tr>
                     </thead>
                     <tbody class="govuk-table__body">
@@ -103,18 +36,10 @@
                             <td class="govuk-table__cell">
                                 <strong>{{ item.theme_id|safe }}.</strong>
                                 <a href="#" class="govuk-link">{{ item.theme_name|safe }}</a></td>
-                            <td class="govuk-table__cell
-                            {% if item.assigned_to == "NOT YET ASSIGNED" %}govuk-!-font-weight-bold{% endif %}">
-                                {{ item.assigned_to|safe }}</td>
-                            <td class="govuk-table__cell">{{ item.sub_tasks|safe }}</td>
-                            <td class="govuk-table__cell">{{ item.pc_complete|safe }}%</td>
-                            <td class="govuk-table__cell">
-                                <strong class="govuk-tag app-task-list__tag
-                            {% if item.status == 'IN PROGRESS' %}
-                            govuk-tag--blue
-                            {% elif item.status == 'NOT STARTED' %} govuk-tag--grey
-                            {% endif %}" id="eligibility-status">{{ item.status|safe }}</strong>
-                            </td>
+                            <td class="govuk-table__cell">{{ item.overall_rating|safe }}</td>
+                            <td class="govuk-table__cell">{{ item.overall_score|safe }}</td>
+                            <td class="govuk-table__cell">{{ item.average|safe }}%</td>
+
                             {#<td class="govuk-table__cell gc_bold-text gc_blue-text">{{ item.status|safe }}</td>#}
                         </tr>
                     {% endfor %}

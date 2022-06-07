@@ -46,6 +46,8 @@ router.get( '/v1/help', homeManager );
 //
 router.get( '/v1/assessments', dataManager );
 router.get( '/v2/assessments', dataManager2 );
+// this will become the de-factor "home"
+router.get( '/v2/assessments/about-the-tool', dataManager2 );
 
 // new V2 assessment details
 router.get( '/v2/assessments/cover-sheet', dataManager2 );
@@ -53,6 +55,8 @@ router.get( '/v2/assessments/themes', dataManager2 );
 router.get( '/v2/assessments/themes/:themeID', dataManager2 );
 router.get( '/v2/assessments/themes/:themeID/summary', dataManager2 );
 router.get( '/v2/assessments/themes/:themeID/reports', dataManager2 );
+
+router.get( '/v2/assessments/themes/:themeID/practice-areas', dataManager2 );
 
 
 router.get( '/v2/assessments/summary-scores', dataManager2 );
