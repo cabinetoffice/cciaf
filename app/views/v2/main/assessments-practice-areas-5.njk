@@ -8,12 +8,14 @@
         {% include '../nav/left-nav-assessments-B-themes-open.njk' %}
     {% endif %}
 
+    {% include '../nav/left-nav-assessment-theme-5.njk' %}
+
     <!-- START: RHS CONTENT @80% -->
     <div class="govuk-!-margin-bottom-9 govuk-grid-column-three-quarters" style="width: 80%;">
 
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-three-quarters">
-                <h1 class="govuk-heading-xl ">Practice areas: 5.1 to 5.5</h1>
+                <h1 class="govuk-heading-xl ">Practice Area detail</h1>
 
             </div>
         </div>
@@ -21,25 +23,34 @@
         <div class="govuk-grid-row">
             <ul class="govuk-list" style="padding: 0 15px;">
 
+                {% if urlObj.url === 'assessments-theme-pa-id-5-1' %}
                 <li class="govuk-!-margin-bottom-8">
-                    {% include './theme-tables/pa-test.njk' %}
+                    {% include './practice-area-tables/pa-details-1.njk' %}
                 </li>
 
-                <li class="govuk-!-margin-bottom-8">
-                    {% include './theme-tables/pa-test.njk' %}
-                </li>
+                {% elif urlObj.url === 'assessments-theme-pa-id-5-2' %}
 
                 <li class="govuk-!-margin-bottom-8">
-                    {% include './theme-tables/pa-test.njk' %}
+                    {% include './practice-area-tables/pa-details-2.njk' %}
                 </li>
 
-                <li class="govuk-!-margin-bottom-8">
-                    {% include './theme-tables/pa-test.njk' %}
-                </li>
+                {% endif %}
 
-                <li class="govuk-!-margin-bottom-8">
-                    {% include './theme-tables/pa-test.njk' %}
-                </li>
+                {#<li class="govuk-!-margin-bottom-8">#}
+                    {#{% include './practice-area-tables/pa-test.njk' %}#}
+                {#</li>#}
+
+                {#<li class="govuk-!-margin-bottom-8">#}
+                    {#{% include './practice-area-tables/pa-test.njk' %}#}
+                {#</li>#}
+
+                {#<li class="govuk-!-margin-bottom-8">#}
+                    {#{% include './practice-area-tables/pa-test.njk' %}#}
+                {#</li>#}
+
+                {#<li class="govuk-!-margin-bottom-8">#}
+                    {#{% include './practice-area-tables/pa-test.njk' %}#}
+                {#</li>#}
 
             </ul>
         </div>

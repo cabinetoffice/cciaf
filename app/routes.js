@@ -57,6 +57,7 @@ router.get( '/v2/assessments/themes/:themeID/summary', dataManager2 );
 router.get( '/v2/assessments/themes/:themeID/reports', dataManager2 );
 
 router.get( '/v2/assessments/themes/:themeID/practice-areas', dataManager2 );
+router.get( '/v2/assessments/themes/:themeID/practice-areas/:paID', dataManager2 );
 
 
 router.get( '/v2/assessments/summary-scores', dataManager2 );

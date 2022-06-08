@@ -23,10 +23,40 @@
 
         {#<li class="s4_nav-test"><a class="s4_nav-link-test" href="#">Practice Areas: 5.1 to 5.5</a></li>#}
 
+        {#<li class="s4_nav-test#}
+            {#{% if urlObj.url == 'assessments-theme-single-practice-areas' %}s4_nav-link-test--active{% endif %}">#}
+            {#<a class="s4_nav-link-test#}
+                {#{% if urlObj.url == 'assessments-theme-single-practice-areas' %}s4_active-test{% endif %}" href="/v2/assessments/themes/5/practice-areas?test=a">View All Practice Areas</a>#}
+        {#</li>#}
+
         <li class="s4_nav-test
-            {% if urlObj.url == 'assessments-theme-single-practice-areas' %}s4_nav-link-test--active{% endif %}">
+            {% if urlObj.url == 'assessments-theme-pa-id-5-1' %}s4_nav-link-test--active{% endif %}">
             <a class="s4_nav-link-test
-                {% if urlObj.url == 'assessments-theme-single-practice-areas' %}s4_active-test{% endif %}" href="/v2/assessments/themes/5/practice-areas?test=a">Practice Areas: 5.1 to 5.5</a>
+                {% if urlObj.url == 'assessments-theme-pa-id-5-1' %}s4_active-test{% endif %}" href="/v2/assessments/themes/5/practice-areas/5-1?test=a">Practice Area: 5.1</a>
+        </li>
+
+        <li class="s4_nav-test
+            {% if urlObj.url == 'assessments-theme-pa-id-5-2' %}s4_nav-link-test--active{% endif %}">
+            <a class="s4_nav-link-test
+                {% if urlObj.url == 'assessments-theme-pa-id-5-2' %}s4_active-test{% endif %}" href="/v2/assessments/themes/5/practice-areas/5-2?test=a">Practice Area: 5.2</a>
+        </li>
+
+        <li class="s4_nav-test
+            {% if urlObj.url == 'assessments-theme-pa-id-5-3' %}s4_nav-link-test--active{% endif %}">
+            <a class="s4_nav-link-test
+                {% if urlObj.url == 'assessments-theme-pa-id-5-3' %}s4_active-test{% endif %}" href="/v2/assessments/themes/5/practice-areas?test=a">Practice Area: 5.3</a>
+        </li>
+
+        <li class="s4_nav-test
+            {% if urlObj.url == 'assessments-theme-pa-id-5-4' %}s4_nav-link-test--active{% endif %}">
+            <a class="s4_nav-link-test
+                {% if urlObj.url == 'assessments-theme-pa-id-5-4' %}s4_active-test{% endif %}" href="/v2/assessments/themes/5/practice-areas?test=a">Practice Area: 5.4</a>
+        </li>
+
+        <li class="s4_nav-test
+            {% if urlObj.url == 'assessments-theme-pa-id-5-5' %}s4_nav-link-test--active{% endif %}">
+            <a class="s4_nav-link-test
+                {% if urlObj.url == 'assessments-theme-pa-id-5-5' %}s4_active-test{% endif %}" href="/v2/assessments/themes/5/practice-areas?test=a">Practice Area: 5.5</a>
         </li>
 
         <li class="s4_nav-test

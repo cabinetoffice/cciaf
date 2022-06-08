@@ -11,9 +11,12 @@
 
         <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Theme 5</h1>
 
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-7">
-            Assessment ID: HOME-2345677
-        </h2>
+
+            <h2 class="govuk-heading-m">System reference:
+                <span class="govuk-!-font-weight-regular">ABC-12345</span>
+            </h2>
+
+
 
 
         {#<span class="govuk-heading-m app-task-list__section-number govuk-!-margin-bottom-7">5.  Commercial Lifecycle Manage: contract management</span>#}
@@ -27,6 +30,175 @@
 
 
         {% include './theme-tables/theme-details-5.njk' %}
+
+        {#
+
+        <table class="govuk-table govuk-!-font-size-16">
+            <caption class="govuk-table__caption govuk-table__caption--m govuk-!-margin-bottom-5">
+                5. Commercial Lifecycle Manage: contract management
+            </caption>
+
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header s4_table_header--blk-btm" width="52%">Practice Area</th>
+                <th scope="col" class="govuk-table__header s4_table_header--blk-btm" width="10%">Criteria</th>
+                <th scope="col" class="govuk-table__header s4_table_header--blk-btm" width="10%">Criteria completed</th>
+                <th scope="col" class="govuk-table__header s4_table_header--blk-btm" width="13%">Percentage complete (%)</th>
+                <th scope="col" class="govuk-table__header s4_table_header--blk-btm" width="15%">Status</th>
+            </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+
+            {% for item in urlObj.themeData %}
+                <!-- START: THEME LOOP  -->
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                        <a href="/v2/assessments/themes/{{ item.pa_id }}/practice-areas/">{{ item.pa_id|safe }} - {{ item.pa_desc|safe }}</a>
+                    </td>
+
+                    <td class="govuk-table__cell">{{ item.num_of_criteria|safe }}</td>
+                    <td class="govuk-table__cell">{{ item.pa_complete|safe }}</td>
+                    <td class="govuk-table__cell">{{ item.percent_complete|safe }}%</td>
+                    <td class="govuk-table__cell">
+                        {% if item.percent_complete|safe == '100' %}
+
+                        COMPLETED
+                        {% elif ( item.percent_complete|safe <= '99' ) and ( item.percent_complete|safe > '1' ) %}
+                        IN PROGRESS
+                        {% else %}
+                        NOT STARTED
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+
+
+
+
+
+
+        <!-- START: THEME 5 -->
+        <table class="govuk-table govuk-!-font-size-16">
+            <caption class="govuk-table__caption govuk-table__caption--m govuk-!-margin-bottom-5">
+                5. Commercial Lifecycle Manage: contract management
+            </caption>
+
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header s4_table_header--blk-btm" width="52%">Practice Area</th>
+                <th scope="col" class="govuk-table__header s4_table_header--blk-btm" width="10%">Criteria</th>
+                <th scope="col" class="govuk-table__header s4_table_header--blk-btm" width="10%">Criteria completed</th>
+                <th scope="col" class="govuk-table__header s4_table_header--blk-btm" width="13%">Percentage complete (%)</th>
+                <th scope="col" class="govuk-table__header s4_table_header--blk-btm" width="15%">Status</th>
+            </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+
+            <!-- THEME 5 - PA #1 -->
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                    <a href="#" class="govuk-link">
+                        5.1 - Contract mobilisation and transition
+                    </a>
+                </td>
+                <td class="govuk-table__cell">11</td>
+                <td class="govuk-table__cell">0</td>
+                <td class="govuk-table__cell">0%</td>
+                <td class="govuk-table__cell">
+                    <strong class="govuk-tag app-task-list__tag"
+                            style="background-color: #d4351c; color: #fff;">
+                        NOT STARTED
+                    </strong>
+                </td>
+            </tr>
+            <!-- THEME 5 - PA #2 -->
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                    <a href="#" class="govuk-link">
+                        5.2 - Managing delivery and performance
+                    </a>
+                </td>
+                <td class="govuk-table__cell">14</td>
+                <td class="govuk-table__cell">0</td>
+                <td class="govuk-table__cell">0%</td>
+                <td class="govuk-table__cell">
+                    <strong class="govuk-tag app-task-list__tag"
+                            style="background-color: #d4351c; color: #fff;">
+                        NOT STARTED
+                    </strong>
+                </td>
+            </tr>
+            <!-- THEME 5 - PA #3 -->
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                    <a href="#" class="govuk-link">
+                        5.3 - Managing contract risk
+                    </a>
+                </td>
+                <td class="govuk-table__cell">13</td>
+                <td class="govuk-table__cell">0</td>
+                <td class="govuk-table__cell">0%</td>
+                <td class="govuk-table__cell">
+                    <strong class="govuk-tag app-task-list__tag"
+                            style="background-color: #d4351c; color: #fff;">
+                        NOT STARTED
+                    </strong>
+                </td>
+            </tr>
+            <!-- THEME 5 - PA #4 -->
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                    <a href="#" class="govuk-link">
+                        5.4 - Supply chain, inventory management/stock control (NHS Only)
+                    </a>
+                </td>
+                <td class="govuk-table__cell">12</td>
+                <td class="govuk-table__cell">0</td>
+                <td class="govuk-table__cell">0%</td>
+                <td class="govuk-table__cell">
+                    <strong class="govuk-tag app-task-list__tag"
+                            style="background-color: #d4351c; color: #fff;">
+                        NOT STARTED
+                    </strong>
+                </td>
+            </tr>
+            <!-- THEME 5 - PA #5 -->
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                    <a href="#" class="govuk-link">
+                        5.5 - Supply chain, logistics (NHS Only)
+                    </a>
+                </td>
+                <td class="govuk-table__cell">6</td>
+                <td class="govuk-table__cell">0</td>
+                <td class="govuk-table__cell">0%</td>
+                <td class="govuk-table__cell">
+                    <strong class="govuk-tag app-task-list__tag"
+                            style="background-color: #d4351c; color: #fff;">
+                        NOT STARTED
+                    </strong>
+                </td>
+            </tr>
+            <!-- THEME 5 - TOTALS -->
+            <tr class="govuk-table__row" style="background-color: #fafafa;">
+                <th class="govuk-table__cell" style="border-bottom: none;font-weight: 600;">TOTALS:</th>
+                <td class="govuk-table__cell" style="border-bottom: none;font-weight: 600;">56</td>
+                <td class="govuk-table__cell" style="border-bottom: none;font-weight: 600;">15</td>
+                <td class="govuk-table__cell" style="border-bottom: none;font-weight: 600;">36%</td>
+                <td class="govuk-table__cell" style="border-bottom: none;font-weight: 600;">
+                    <strong class="govuk-tag app-task-list__tag"
+                            style="background-color: #d4351c; color: #fff;">
+                        NOT STARTED
+                    </strong>
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+        #}
 
 
 

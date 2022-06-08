@@ -56,7 +56,7 @@
                 <ul id="navigation" class="govuk-header__navigation s4_top-nav__item-list" aria-label="Navigation menu">
                     <li class="govuk-header__navigation-item s4_top-nav__item
                         {% if urlObj.nav === 'home' %}s4_top-nav__item--active{% endif %}">
-                        <a href="/v1/home">Home</a>
+                        <a href="#">Home</a>
                     </li>
 
                     <!-- START: current active Nav Item + SUB NAV -->
@@ -95,7 +95,7 @@
 
                     <li class="govuk-header__navigation-item s4_top-nav__item
                     {% if urlObj.nav === 'orgs' %}s4_top-nav__item--active{% endif %}">
-                        <a href="/v1/organisations">External peer reviews</a>
+                        <a href="#">External peer reviews</a>
                         <ul class="s4_top-nav__sub-item-list">
                             <!-- IS ACTIVE -->
                             <li class="s4_top-nav__sub-item
@@ -120,7 +120,7 @@
                     <li class="govuk-header__navigation-item s4_top-nav__item
                     {% if urlObj.nav === 'help' %}s4_top-nav__item--active{% endif %}"
                         style="margin-left: auto;">
-                        <a class="govuk-header__link" href="/v1/help">Help</a>
+                        <a class="govuk-header__link" href="#">Help</a>
                         <ul class="s4_top-nav__sub-item-list">
                             <!-- IS ACTIVE -->
                             <li class="s4_top-nav__sub-item s4_top-nav__sub-item--active">
@@ -148,7 +148,7 @@
                         {% if urlObj.loggedIn %}
                             <a class="govuk-header__link" href="#">Sign out</a>
                         {% else %}
-                            <a class="govuk-header__link" href="/v1/sign-in">Sign in / Register</a>
+                            <a class="govuk-header__link" href="#">Sign in / Register</a>
                         {% endif %}
                     </li>
                 </ul>

@@ -37,8 +37,14 @@
                 </div>
             </div>
 
+        </div>
 
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <h2 class="govuk-heading-m">System reference:
+                    <span class="govuk-!-font-weight-regular">ABC-12345</span></h2>
 
+            </div>
         </div>
 
         <div class="govuk-grid-row">
@@ -119,7 +125,7 @@
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
                                 <strong>{{ item.theme_id|safe }}.</strong>
-                                <a href="#" class="govuk-link">{{ item.theme_name|safe }}</a></td>
+                                <a href="/v2/assessments/themes/5?test=a" class="govuk-link">{{ item.theme_name|safe }}</a></td>
                             <td class="govuk-table__cell
                             {% if item.assigned_to == "NOT YET ASSIGNED" %}govuk-!-font-weight-bold{% endif %}">
                                 {{ item.assigned_to|safe }}</td>

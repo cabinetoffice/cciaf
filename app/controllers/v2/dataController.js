@@ -19,6 +19,7 @@ module.exports =  function grid( req, res ) {
 
     let userId = req.params.userID;
     let themeId = req.params.themeID;
+    let practiceAreaId = req.params.paID;
 
     let columnKey = {
         A: 'pa_id',
@@ -46,6 +47,15 @@ module.exports =  function grid( req, res ) {
         F: 'status',
         G: 'is_owner'
     };
+    let practiceAreasColumnKey = {
+        A: 'pa_id',
+        B: 'theme_id',
+        C: 'pa_desc',
+        D: 'assigned_to',
+        E: 'num_of_criteria',
+        F: 'pa_complete',
+        G: 'percent_complete'
+    };
 
     /* this is where we gather the grants data */
     const importContent = excelToJson({
@@ -68,7 +78,6 @@ module.exports =  function grid( req, res ) {
         || ( baseUrl === `/v2/assessments?test=${query.test}` )) {
 
         console.log('QUERY DATA', query);
-
 
         urlObj = {
             url: 'assessments-overview',
@@ -122,8 +131,6 @@ module.exports =  function grid( req, res ) {
         });
 
         let importThemes = importContent.overview;
-        // console.log("spok data", spok);
-        // console.log("this is the trimmed ", spok2);
 
         urlObj = {
             url: 'assessments-themes',
@@ -144,7 +151,7 @@ module.exports =  function grid( req, res ) {
     }
 
 
-    // START:: Assessments -> THEMES SINGLE PAGE
+    // START:: #4 Assessments -> THEMES SINGLE PAGE
     else if (( baseUrl === `/v2/assessments/themes/${themeId}` )
     || ( baseUrl === `/v2/assessments/themes/${themeId}?test=${query.test}` )) {
 
@@ -153,33 +160,25 @@ module.exports =  function grid( req, res ) {
         /* this is where we gather the grants data */
         const importContent = excelToJson({
             sourceFile: './public/data/gov_comm_content_db_v2.xlsx',
-            columnToKey: usersColumnKey,
+            columnToKey: practiceAreasColumnKey,
             header: {
                 rows: 1
             }
         });
 
-        let importUsers = importContent.users;
+        let importPracticeAreas = importContent.practice_areas;
 
-        console.log('THE USER ARRAY', importUsers );
+        console.log('THE PA  ARRAY', importPracticeAreas );
 
         //var item = importUsers.find(item => item.user_id === parseInt(userId) );
 
         console.log('THE ITEM', item);
 
-
-
-        let singleUser = importUsers[userId];
-
-
-
-        console.log('USR SING', importUsers[userId]);
-
         //let myNewID = importUsers.findIndex(x => x.user_id === userId );
 
-        let myNEWPuppy = importUsers.find(x => x.user_id === userId);
+        let myNEWPuppy = importPracticeAreas.find(x => x.theme_id === themeId);
 
-        console.log('GET ITTTT??', myNEWPuppy);
+        console.log('New PUppy GET ITTTT??', myNEWPuppy);
 
         urlObj = {
             url: 'assessments-theme-single',
@@ -198,7 +197,7 @@ module.exports =  function grid( req, res ) {
                 extraText: 'to Assessment',
                 url: '/v2/assessments/themes?test=a'
             },
-            themeData: importUsers,
+            themeData: importPracticeAreas,
             userData: item
         };
 
@@ -206,8 +205,41 @@ module.exports =  function grid( req, res ) {
 
     }
 
+    // START:: #4 Assessments -> THEMES -> PRACTICE AREA PAGE
+    else if (( baseUrl === `/v2/assessments/themes/${themeId}/practice-areas/${practiceAreaId}` )
+        || ( baseUrl === `/v2/assessments/themes/${themeId}/practice-areas/${practiceAreaId}?test=${query.test}` )) {
+
+        console.log('got the numberoooooo', practiceAreaId);
+
+        urlObj = {
+            url: `assessments-theme-pa-id-${practiceAreaId}`,
+            nav: 'assess',
+            subNav: 'overview',
+            title: 'Current Assessment - Manage Users',
+            breadCrumbs: [
+                { text: 'Home', href: "/home3-descoped" },
+                { text: 'Assessments', href: "/v1/grants" },
+                { text: 'Current assessment', href: "/v1/grants" },
+                { text: 'Themes', href: "#" },
+                { text: `Theme ${themeId}`, href: "" }
+            ],
+            backLink: {
+                show: true,
+                extraText: 'to Assessment',
+                url: '/v2/assessments/themes?test=a'
+            },
+            // themeData: importPracticeAreas,
+            userData: item
+        };
+
+        console.log('got the OBJ', urlObj);
+
+        return res.render('v2/data-base', { urlObj } );
+
+    }
+
     // START:: Assessments -> THEMES SINGLE SUMMARY PAGE
-    else if (( baseUrl === `/v2/assessments/themes/${themeId}` )
+    else if (( baseUrl === `/v2/assessments/themes/${themeId}/summary` )
         || ( baseUrl === `/v2/assessments/themes/${themeId}/summary?test=${query.test}` )) {
 
         console.log('got the numberoooooo', userId);
@@ -264,38 +296,33 @@ module.exports =  function grid( req, res ) {
 
     }
 
-    // START:: Assessments -> THEMES SINGLE SUMMARY PAGE
-    else if (( baseUrl === `/v2/assessments/themes/${themeId}` )
+    // START:: Assessments -> THEMES SINGLE PRACTICE AREAS
+    // -----------------------------------------------------------------------
+    else if (( baseUrl === `/v2/assessments/themes/${themeId}/practice-areas` )
         || ( baseUrl === `/v2/assessments/themes/${themeId}/practice-areas?test=${query.test}` )) {
-
-        console.log('got the numberoooooo', userId);
 
         /* this is where we gather the grants data */
         const importContent = excelToJson({
             sourceFile: './public/data/gov_comm_content_db_v2.xlsx',
-            columnToKey: usersColumnKey,
+            columnToKey: practiceAreasColumnKey,
             header: {
                 rows: 1
             }
         });
 
-        let importUsers = importContent.users;
+        let importPracticeAreas = importContent.practice_areas;
 
-        console.log('THE USER ARRAY', importUsers );
+        console.log('THE PA  ARRAY', importPracticeAreas );
 
         //var item = importUsers.find(item => item.user_id === parseInt(userId) );
 
         console.log('THE ITEM', item);
 
-        let singleUser = importUsers[userId];
-
-        console.log('USR SING', importUsers[userId]);
-
         //let myNewID = importUsers.findIndex(x => x.user_id === userId );
 
-        let myNEWPuppy = importUsers.find(x => x.user_id === userId);
+        let myNEWPuppy = importPracticeAreas.find(x => x.theme_id === themeId);
 
-        console.log('GET ITTTT??', myNEWPuppy);
+        console.log('New PUppy GET ITTTT??', myNEWPuppy);
 
         urlObj = {
             url: `assessments-theme-single-practice-areas`,
@@ -306,7 +333,7 @@ module.exports =  function grid( req, res ) {
                 { text: 'Home', href: "/home3-descoped" },
                 { text: 'Assessments', href: "/v1/grants" },
                 { text: 'Current assessment', href: "/v1/grants" },
-                { text: 'Manage users', href: "#" },
+                { text: `Theme ${themeId} `, href: "#" },
                 { text: 'Manage user: UserName GoesHere', href: "" }
             ],
             backLink: {
@@ -314,7 +341,7 @@ module.exports =  function grid( req, res ) {
                 extraText: 'to Themes',
                 url: '/v2/assessments/manage-users'
             },
-            themeData: importUsers,
+            themeData: importPracticeAreas,
             userData: item
         };
 
@@ -323,6 +350,7 @@ module.exports =  function grid( req, res ) {
     }
 
     // START:: Assessments -> THEMES SINGLE SUMMARY PAGE
+    // -----------------------------------------------------------------------
     else if (( baseUrl === `/v2/assessments/themes/${themeId}` )
         || ( baseUrl === `/v2/assessments/themes/${themeId}/reports?test=${query.test}` )) {
 
@@ -338,21 +366,13 @@ module.exports =  function grid( req, res ) {
         });
 
         let importUsers = importContent.users;
-
         console.log('THE USER ARRAY', importUsers );
-
         //var item = importUsers.find(item => item.user_id === parseInt(userId) );
-
         console.log('THE ITEM', item);
-
         let singleUser = importUsers[userId];
-
         console.log('USR SING', importUsers[userId]);
-
         //let myNewID = importUsers.findIndex(x => x.user_id === userId );
-
         let myNEWPuppy = importUsers.find(x => x.user_id === userId);
-
         console.log('GET ITTTT??', myNEWPuppy);
 
         urlObj = {
@@ -381,6 +401,7 @@ module.exports =  function grid( req, res ) {
     }
 
     // START:: #3 Assessments SUMMARY SCORES Page
+    // -----------------------------------------------------------------------
     else if (( baseUrl === '/v2/assessments/summary-scores' )
         || ( baseUrl === `/v2/assessments/summary-scores?test=${query.test}` )) {
 
@@ -416,6 +437,7 @@ module.exports =  function grid( req, res ) {
     }
 
     // START:: Assessments -> Reports
+    // -----------------------------------------------------------------------
     else if (( baseUrl === '/v2/assessments/reports' )
         || ( baseUrl === `/v2/assessments/reports?test=${query.test}` )) {
 
@@ -451,6 +473,7 @@ module.exports =  function grid( req, res ) {
     }
 
     // START:: Assessments -> Manage Users
+    // -----------------------------------------------------------------------
     else if (( baseUrl === '/v2/assessments/manage-users' )
         || ( baseUrl === `/v2/assessments/manage-users?test=${query.test}` )) {
 
@@ -484,7 +507,8 @@ module.exports =  function grid( req, res ) {
 
     }
 
-    // START:: Assessments -> Manage Users
+    // START:: Assessments -> Manage Users SINGLE
+    // -----------------------------------------------------------------------
     else if ( baseUrl === `/v2/assessments/manage-users/${userId}` ) {
 
         console.log('got the numberoooooo', userId);
@@ -546,6 +570,11 @@ module.exports =  function grid( req, res ) {
         return res.render('v2/data-base', { urlObj } );
 
     }
+
+
+
+
+
 
     // START::
     else if ( baseUrl === '/v2/assessments/theme-5' ) {
