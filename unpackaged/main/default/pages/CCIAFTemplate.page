@@ -1,0 +1,321 @@
+<apex:page controller="CCIAFTemplateController" applyHtmlTag="false" applyBodyTag="false" standardStylesheets="false" docType="html-5.0" showHeader="false" sidebar="false" cache="false">
+    <html lang="en-GB">
+        <head>
+            <title><apex:insert name="title" /> | {!$Site.MasterLabel}</title>
+            <!--[if !IE 8]><!-->
+            <link rel="stylesheet" href="{!URLFOR($Resource.govuk, 'govuk-frontend-4.0.0.min.css')}" />
+            <!--<![endif]-->
+            <!--[if IE 8]>
+<link rel="stylesheet" href="{!URLFOR($Resource.govuk, 'govuk-frontend-ie8-4.0.0.min.css')}">
+<![endif]-->
+            
+            <c:CCIAFStylesheets />
+            
+            <style>
+                
+                .govuk-header__container {
+                border-bottom: 0;
+                }
+                
+                
+                .plus-test::after {
+                display: inline-block;
+                vertical-align: middle;
+                border-radius: 50%;
+                width: 16px;
+                height: 16px;
+                background-image: linear-gradient(black, black), linear-gradient(black, black);
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: 20% 70%, 70% 20%;
+                position: relative;
+                margin-left: 6px;
+                top: -2px;
+                content: "";
+                }
+            </style>
+        </head>
+        
+        <body class="govuk-template__body ">
+            <script>
+            document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
+            
+            </script>
+            
+            <a href="#main-content" class="govuk-skip-link">Skip to main content</a>
+            
+            <c:CookieBanner />
+            
+            <header class="govuk-header " role="banner" data-module="govuk-header" style="border-bottom: none;">
+                <div class="govuk-header__container govuk-width-container">
+                    
+                    <div class="s4_header__official-banner">OFFICIAL - SENSITIVE</div>
+                    
+                    <div class="govuk-header__logo s4_header__left-block">
+                        <div class="s4_header__logo">
+                            <img src="{!URLFOR($Resource.govukcrest)}" alt="UK Government crest" class="s4_header__logo-crest" />
+                            <span class="s4_header__logo-title">Government Commercial Function</span>
+                        </div>
+                    </div>
+                    
+                    <div class="govuk-header__content s4_header__right-block">
+                        
+                        <a href="#" class="govuk-header__link govuk-header__link--service-name s4_header__service-name">
+                            CCIAF Scoring Tool
+                        </a>
+                        
+                        
+                        <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide navigation menu" aria-expanded="false">Menu</button>
+                        
+                        <nav class="s4_top-nav__menu">
+                            <ul id="navigation" class="govuk-header__navigation s4_top-nav__item-list" aria-label="Navigation menu">
+                                <li class="govuk-header__navigation-item s4_top-nav__item {!IF(LOWER($CurrentPage.Name) = 'cciafhome', 's4_top-nav__item--active', '')}">
+                                    <a href="{!$Page.CCIAFHome}">Home</a>
+                                </li>
+                                
+                                <!-- START: current active Nav Item + SUB NAV -->
+                                <!-- ============================================ -->
+                                
+                                <apex:outputPanel rendered="{!ISPICKVAL($User.UserType, 'Guest')}">                                    
+                                    <li class="govuk-header__navigation-item s4_top-nav__item
+                                               " style="margin-left: auto;">
+                                        <a class="govuk-header__link" href="#">Help</a>
+                                        <ul class="s4_top-nav__sub-item-list">
+                                            <!-- IS ACTIVE -->
+                                            <li class="s4_top-nav__sub-item s4_top-nav__sub-item--active">
+                                                <a href="#">
+                                                    Glossary
+                                                </a>
+                                            </li>
+                                            <li class="s4_top-nav__sub-item">
+                                                <a href="#">
+                                                    How to guide
+                                                </a>
+                                            </li>
+                                            <li class="s4_top-nav__sub-item">
+                                                <a href="#">
+                                                    Contact us
+                                                </a>
+                                            </li>
+                                            
+                                        </ul>
+                                    </li>
+                                    
+                                    <li class="govuk-header__navigation-item s4_top-nav__item {!IF(LOWER($CurrentPage.Name) = 'cciaflogin' || LOWER($CurrentPage.Name) = 'cciafregister', 's4_top-nav__item--active', '')}" style="align-self: revert;">
+                                        
+                                        <a class="govuk-header__link" href="{!$Page.CCIAFLogin}">Sign in / Register</a>
+                                        
+                                    </li>
+                                </apex:outputPanel>
+                                
+                                <apex:outputPanel rendered="{!NOT(ISPICKVAL($User.UserType, 'Guest'))}">
+                                    <li class="govuk-header__navigation-item s4_top-nav__item
+                                               {!IF(BEGINS(LOWER($CurrentPage.Name), 'cciafassess'), 's4_top-nav__item--active', '')}">
+                                        <a href="{!$Page.CCIAFAssessment}">Assessments</a>
+                                        <ul class="s4_top-nav__sub-item-list">
+                                            <li class="s4_top-nav__sub-item
+                                                       ">
+                                                <a href="#">
+                                                    About the CCIAF tool
+                                                </a>
+                                            </li>
+                                            <!-- IS ACTIVE -->
+                                            <li class="s4_top-nav__sub-item s4_top-nav__sub-item--active">
+                                                <a href="/v2/assessments">
+                                                    Current assessment
+                                                </a>
+                                            </li>
+                                            <li class="s4_top-nav__sub-item
+                                                       ">
+                                                <a href="#">
+                                                    Previous assessments
+                                                </a>
+                                            </li>
+                                            <li class="s4_top-nav__sub-item
+                                                       ">
+                                                <a href="#">
+                                                    Sub-organisation assessments
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <!-- END: current active Nav Item -->
+                                    
+                                    <li class="govuk-header__navigation-item s4_top-nav__item
+                                               ">
+                                        <a href="#">External peer reviews</a>
+                                        <ul class="s4_top-nav__sub-item-list">
+                                            <!-- IS ACTIVE -->
+                                            <li class="s4_top-nav__sub-item
+                                                       s4_top-nav__sub-item--active">
+                                                <a href="/v1/organisations">
+                                                    Overview
+                                                </a>
+                                            </li>
+                                            <li class="s4_top-nav__sub-item
+                                                       ">
+                                                <a href="/v1/my-organisation">
+                                                    My organisation
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    
+                                    <li class="govuk-header__navigation-item s4_top-nav__item">
+                                        <a href="#">Notifications</a>
+                                    </li>
+                                    
+                                    <li class="govuk-header__navigation-item s4_top-nav__item
+                                               " style="margin-left: auto;">
+                                        <a class="govuk-header__link" href="#">Help</a>
+                                        <ul class="s4_top-nav__sub-item-list">
+                                            <!-- IS ACTIVE -->
+                                            <li class="s4_top-nav__sub-item s4_top-nav__sub-item--active">
+                                                <a href="#">
+                                                    Glossary
+                                                </a>
+                                            </li>
+                                            <li class="s4_top-nav__sub-item">
+                                                <a href="#">
+                                                    How to guide
+                                                </a>
+                                            </li>
+                                            <li class="s4_top-nav__sub-item">
+                                                <a href="#">
+                                                    Contact us
+                                                </a>
+                                            </li>
+                                            
+                                        </ul>
+                                    </li>
+                                    
+                                    <li class="govuk-header__navigation-item s4_top-nav__item
+                                               " style="align-self: revert;">
+                                        
+                                        <a class="govuk-header__link" href="{!$Site.Prefix}/secur/logout.jsp">Sign out</a>
+                                        
+                                    </li>
+                                </apex:outputPanel>
+                            </ul>
+                        </nav>
+                        
+                    </div>
+                    
+                </div>
+                <div class="s4_top-nav__sub-item-bar "></div>
+                
+            </header>
+            
+            <div class="govuk-width-container">
+                <main class="govuk-main-wrapper govuk-main-wrapper--auto-spacing" id="main-content" role="main">
+                    
+                    <apex:outputPanel id="errors" rendered="{!HasErrors}">
+                        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+                            <h2 class="govuk-error-summary__title" id="error-summary-title">
+                                There is a problem
+                            </h2>
+                            <div class="govuk-error-summary__body">
+                                <!--<apex:messages styleClass="govuk-list govuk-error-summary__list" />-->
+                                <apex:pageMessages escape="false" />
+                            </div>
+                        </div>
+                    </apex:outputPanel>
+                    
+                    <apex:insert name="body" />
+                    
+                </main>
+            </div>
+            
+            <footer class="govuk-footer " role="contentinfo">
+                <div class="govuk-width-container ">
+                    <div class="govuk-footer__meta">
+                        <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+                            <ul class="govuk-footer__inline-list">
+                                <li class="govuk-footer__inline-list-item">
+                                    <a class="govuk-footer__link" href="{!$Page.CCIAFHome}">
+                                        About us
+                                    </a>
+                                </li>
+                                
+                                <li class="govuk-footer__inline-list-item">
+                                    <a class="govuk-footer__link" href="{!$Page.CCIAFAccessibility}">
+                                        Accessibility statement
+                                    </a>
+                                </li>
+                                
+                                <li class="govuk-footer__inline-list-item">
+                                    <a class="govuk-footer__link" href="{!$Page.CCIAFPrivacy}">
+                                        Privacy notice
+                                    </a>
+                                </li>            
+                                
+                                <li class="govuk-footer__inline-list-item">
+                                    <a class="govuk-footer__link" href="#@todo">
+                                        Terms and conditions
+                                    </a>
+                                </li>                    
+                                
+                                <li class="govuk-footer__inline-list-item">
+                                    <a class="govuk-footer__link" href="{!$Page.CCIAFCookiePolicy}">
+                                        Cookie policy
+                                    </a>
+                                </li>
+                            </ul>
+                            
+                            <svg role="presentation" focusable="false" class="govuk-footer__licence-logo" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 483.2 195.7" height="17" width="41">
+                                <path fill="currentColor" d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+                                      />
+                            </svg>
+                            <span class="govuk-footer__licence-description">
+                                All content is available under the
+                                <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated.
+                            </span>
+                        </div>
+                        <div class="govuk-footer__meta-item">
+                            <a class="govuk-footer__link govuk-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/" style="background-image:url('{!URLFOR($Resource.govuk, 'assets/images/govuk-crest.png')}');">© Crown copyright</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            
+            
+            <script src="{!URLFOR($Resource.govuk, 'govuk-frontend-4.0.0.min.js')}"></script>
+            <script>window.GOVUKFrontend.initAll()</script>
+            
+            <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+            <script type="text/javascript">
+                function cleanupErrors()
+                {
+                    $(".errorMsg").each(function () {
+                        $(this).insertBefore($(this).siblings('select, input, textarea').first());
+                        $(this).addClass("govuk-error-message");
+                    });            
+                }
+                $(cleanupErrors);
+                
+                // Submit on enter
+                $('.govuk-input').keypress(function (e) {
+                  if (e.which == 13) {
+                    $(this).parents('form').find('.govuk-button').click()
+                    return false;
+                  }
+                });
+                $('.govuk-checkboxes__input').keypress(function (e) {
+                  if (e.which == 13) {
+                    $(this).parents('form').find('.govuk-button').click()
+                    return false;
+                  }
+                });
+                
+                function do_submit(event, ele)
+            	{
+                	if (event && event.keyCode == 13) 
+                    { 
+                        document.getElementById(ele).click(); 
+                        return false; 
+                    }
+                }
+            </script>
+        </body>
+    </html>
+</apex:page>

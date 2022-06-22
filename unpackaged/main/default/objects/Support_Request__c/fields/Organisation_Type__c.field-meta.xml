@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Organisation_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Organisation Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>a department</fullName>
+                <default>false</default>
+                <label>a department</label>
+            </value>
+            <value>
+                <fullName>an arm's length body (ALB)</fullName>
+                <default>false</default>
+                <label>an arm's length body (ALB)</label>
+            </value>
+            <value>
+                <fullName>a local authority</fullName>
+                <default>false</default>
+                <label>a local authority</label>
+            </value>
+            <value>
+                <fullName>an NHS organisation</fullName>
+                <default>false</default>
+                <label>an NHS organisation</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

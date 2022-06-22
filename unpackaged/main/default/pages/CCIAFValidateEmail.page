@@ -1,0 +1,51 @@
+<apex:page controller="CCIAFTemplateController" extensions="CCIAFValidateEmailExtension" action="{!validate}" applyHtmlTag="false" applyBodyTag="false" standardStylesheets="false" docType="html-5.0" showHeader="false" sidebar="false" cache="false">
+    <head>
+    </head>
+    <apex:composition template="CCIAFTemplate">
+        <apex:define name="title">Your email has been validated</apex:define>
+        <apex:define name="breadcrumbs">
+            <div class="govuk-breadcrumbs">
+                <ol class="govuk-breadcrumbs__list">
+                    <li class="govuk-breadcrumbs__list-item">
+                        <a class="govuk-breadcrumbs__link" href="{!$Page.CCIAFHome}">{!$Site.MasterLabel}</a>
+                        <a class="govuk-breadcrumbs__link" href="{!$Page.CCIAFRegister}">Register</a>
+                    </li>
+                    <li class="govuk-breadcrumbs__list-item" aria-current="page">Validate my email address</li>
+                </ol>
+            </div>
+        </apex:define>
+        <apex:define name="body">
+            <div class="govuk-width-container">
+                <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-two-thirds">
+                            <div class="govuk-panel govuk-panel--confirmation">
+                                <h1 class="govuk-panel__title">
+                                    Email validation complete
+                                </h1>
+                                <div class="govuk-panel__body">
+                                    Your email address has been validated.
+                                </div>
+                            </div>
+                            
+                            <h2 class="govuk-heading-m">What happens next</h2>
+                            
+                            <p class="govuk-body">
+                                We’ve sent your application for review.
+                            </p>
+                            <p class="govuk-body">
+                                Your request will be reviewed by a member of the CCIAF team.
+                            </p>
+                            
+                            <p class="govuk-body">
+                                <a href="@todo" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+                            </p>
+                            
+                            <a href="{!$Page.CCIAFLogin}" class="govuk-button">Return to login screen</a>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </apex:define>
+    </apex:composition>
+</apex:page>

@@ -1,0 +1,109 @@
+<apex:page controller="CCIAFRegisterController" applyHtmlTag="false" applyBodyTag="false" standardStylesheets="false" docType="html-5.0" showHeader="false" sidebar="false" cache="false">
+    <head>
+    </head>
+    <apex:composition template="{!$Site.Template}">
+        <apex:define name="title">Request access to the CCIAF scoring tool</apex:define>
+        <apex:define name="body"> 
+            <apex:form >
+                <div class="govuk-width-container ">
+                    
+                    <div class="govuk-grid-row govuk-!-margin-top-5 govuk-!-margin-bottom-5" style="display: flex;">
+                        <div class="govuk-grid-column-one-half">
+                            
+                            <div class="" style="border-left: 2px solid #005abb;
+                                                 padding-left: 8px;
+                                                 display: flex;
+                                                 height: 50px;
+                                                 flex-direction: row;
+                                                 flex-wrap: wrap;
+                                                 /* align-self: flex-start; */
+                                                 max-width: 275px;">
+                                <img src="{!URLFOR($Resource.govukcrestblack)}" alt="" class="" style="height: 25px;max-width: 100%;" />
+                                <span class="" style="font-family: 'HelveticaNeue', 'Helvetica Neue', 'Arial', 'Helvetica', sans-serif;font-size: 18px;color: #000; line-height: 25px;margin-top: 5px;">Government Commercial Function</span></div>
+                            
+                        </div>
+                        
+                    </div>
+                    
+                    <main class="govuk-main-wrapper govuk-main-wrapper--auto-spacing" id="main-content" role="main">
+                        
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-two-thirds">
+                                <span class="govuk-hint govuk-!-font-size-24 govuk-!-margin-bottom-2">Commercial Continuous Improvement Assessment Framework (CCIAF)</span>
+                                <h1 class="govuk-heading-xl ">Request access to the CCIAF Scoring Tool</h1>
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-one-half">
+                                
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-24" for="{!$Component.fname}">First name</label>
+                                    <apex:inputText styleClass="govuk-input govuk-!-width-three-quarters" id="fname" value="{!FirstName}" />
+                                    
+                                    <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-24 govuk-!-margin-top-5" for="{!$Component.lname}">Last name</label>
+                                    <apex:inputText styleClass="govuk-input govuk-!-width-three-quarters" id="lname" value="{!LastName}" />
+                                    
+                                    <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-24 govuk-!-margin-top-5" for="{!$Component.email}">Email</label>
+                                    <apex:inputText styleClass="govuk-input" id="email" value="{!Email}" />
+                                    
+                                    <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-24 govuk-!-margin-top-5" for="{!$Component.pwd}">Password</label>
+                                    <apex:inputSecret styleClass="govuk-input govuk-!-width-three-quarters" id="pwd" value="{!Password}" />
+                                    
+                                    <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-24 govuk-!-margin-top-5" for="{!$Component.confirm}">Confirm your password</label>
+                                    <apex:inputSecret styleClass="govuk-input govuk-!-width-three-quarters" id="confirm" value="{!ConfirmPassword}" />
+                                    
+                                    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-top-7" />
+                                    
+                                    <!-- START: About your org type -->
+                                    <div id="changed-name-hint" class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-24 govuk-!-margin-top-7 govuk-!-margin-bottom-5">Your organisation type</div>
+                                    <apex:inputHidden id="org_type" value="{!OrgType}" />
+                                    <c:GovukRadio destid="{!$Component.org_type}" sobject="Support_Request__c" field="Organisation_type__c" />
+                                    <!-- END: About your org type -->
+                                    
+                                    <!-- START: Organisation auto suggest -->
+                                    <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-24 govuk-!-margin-top-7" for="{!$Component.org}">Your organisation name</label>
+                                    <apex:inputText styleClass="govuk-input" id="org" value="{!OrgName}" />
+                                    
+                                    <!-- END: Organisation auto suggest -->
+                                    
+                                    <!-- START: Job title -->
+                                    <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-24 govuk-!-margin-top-7" for="{!$Component.job}">Job title</label>
+                                    <apex:inputText styleClass="govuk-input" id="job" value="{!JobTitle}" />
+                                    <!-- END: Job title -->
+                                    
+                                    <div class="govuk-grid-row govuk-!-margin-top-5">
+                                        <div class="govuk-grid-column-full">
+                                            <apex:commandLink styleClass="govuk-button govuk-!-margin-top-5" html-data-module="govuk-button" action="{!register}">Submit access request</apex:commandLink>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                        
+                        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible" />
+                        
+                        <div class="govuk-grid-row govuk-!-margin-top-5">
+                            <div class="govuk-grid-column-one-half">
+                                
+                                <h2 class="govuk-heading-s">About the Government Commercial Service</h2>
+                                
+                                <p class="govuk-body">
+                                    White dwarf how far away culture Sea of Tranquility laws of physics great turbulent clouds. With pretty stories for which there's little good evidence Apollonius of Perga stirred by starlight colonies colonies paroxysm of global death.
+                                    
+                                </p>
+                                
+                            </div>
+                            
+                        </div>
+                        
+                    </main>
+                </div>
+            </apex:form>
+        </apex:define>
+    </apex:composition>
+</apex:page>

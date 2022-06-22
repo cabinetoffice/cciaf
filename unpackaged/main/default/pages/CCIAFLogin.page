@@ -1,0 +1,68 @@
+<apex:page controller="CCIAFLoginController" applyHtmlTag="false" applyBodyTag="false" standardStylesheets="false" docType="html-5.0" showHeader="false" sidebar="false" cache="false" action="{!redirect}">
+    <head>
+    </head>
+    <apex:composition template="{!$Site.Template}">
+        <apex:define name="title">Sign in</apex:define>
+        <apex:define name="body"> 
+            <apex:form >
+                <div class="govuk-width-container ">
+                    
+                    <div class="govuk-grid-row govuk-!-margin-top-5 govuk-!-margin-bottom-5" style="display: flex;">
+                        <div class="govuk-grid-column-one-half">
+                            
+                            <div class="" style="border-left: 2px solid #005abb;
+                                                 padding-left: 8px;
+                                                 display: flex;
+                                                 height: 50px;
+                                                 flex-direction: row;
+                                                 flex-wrap: wrap;
+                                                 /* align-self: flex-start; */
+                                                 max-width: 275px;">
+                                <img src="{!URLFOR($Resource.govukcrestblack)}" alt="UK government crest" class="" style="height: 25px;max-width: 100%;" />
+                                <span class="" style="font-family: 'HelveticaNeue', 'Helvetica Neue', 'Arial', 'Helvetica', sans-serif;font-size: 18px;color: #000; line-height: 25px;margin-top: 5px;">Government Commercial Function</span></div>
+                            
+                        </div>
+                        
+                    </div>
+                    
+                    <main class="govuk-main-wrapper govuk-main-wrapper--auto-spacing" id="main-content" role="main">
+                        
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-two-thirds">
+                                <span class="govuk-hint govuk-!-font-size-24 govuk-!-margin-bottom-2">Commercial Continuous Improvement Assessment Framework (CCIAF)</span>
+                                <h1 class="govuk-heading-xl ">Sign in to CCIAF Scoring Tool</h1>
+                                
+                            </div>
+                        </div>
+                        <div class="govuk-grid-row govuk-!-margin-top-5">
+                            <div class="govuk-grid-column-one-half">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-!-font-weight-bold" for="{!$Component.uname}">Your email address</label>
+                                    <apex:inputText id="uname" styleClass="govuk-input" value="{!username}" />
+                                    
+                                    <label class="govuk-label govuk-!-font-weight-bold govuk-!-margin-top-5" for="{!$Component.pwd}">Your password</label>
+                                    <apex:inputSecret id="pwd" styleClass="govuk-input" value="{!password}" />
+                                    
+                                    
+                                    <apex:commandLink styleClass="govuk-button govuk-!-margin-top-5" html-data-module="govuk-button" action="{!login}">Sign in</apex:commandLink>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full">
+                                <a href="{!$Page.CCIAFForgotPassword}" class="govuk-link">Forgotten your password</a>
+                            </div>
+                            <div class="govuk-grid-column-full govuk-!-margin-top-5">
+                                <a href="{!$Page.CCIAFRegister}" class="govuk-link">Request access to CCIAF Scoring Tool</a>
+                            </div>
+                        </div>
+                        
+                        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible" />
+                        
+                    </main>
+                </div>
+            </apex:form>
+        </apex:define>
+    </apex:composition>
+</apex:page>

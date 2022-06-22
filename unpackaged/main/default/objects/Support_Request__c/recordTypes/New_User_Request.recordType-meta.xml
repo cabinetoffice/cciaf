@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_User_Request</fullName>
+    <active>true</active>
+    <label>New User Request</label>
+    <picklistValues>
+        <picklist>Organisation_Type__c</picklist>
+        <values>
+            <fullName>a department</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>a local authority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>an NHS organisation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>an arm%27s length body %28ALB%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Stage__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Draft</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>
