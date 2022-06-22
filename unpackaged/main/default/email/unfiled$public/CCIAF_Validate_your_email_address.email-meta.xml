@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>CCIAF: Validate your email address</name>
+    <style>none</style>
+    <subject>Validate your email address</subject>
+    <textOnly>Validate your email address
+
+GOV.UK
+
+Hello {!Target_User.FirstName},
+
+Thank you for your interest in signing up to the CCIAF scoring tool.
+
+Please click this link to confirm your email address and continue your application:
+
+https://cabinetoffice-dev-ed.my.site.com/cciaf/cciafvalidateemail?id={!Target_User.Id}
+
+Kind regards,
+
+The CCIAF Team</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

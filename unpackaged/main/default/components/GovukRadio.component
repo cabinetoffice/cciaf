@@ -1,0 +1,44 @@
+<apex:component controller="GovukRadioController">
+    <apex:attribute name="sobject" assignTo="{!SObjectName}" type="string" description="The name of the SObject." />
+    <apex:attribute name="field"  assignTo="{!SObjectField}" type="string" description="The name of the picklist field." />
+    
+    <apex:attribute name="manualValues" assignTo="{!Values}" type="string" description="If you're not using a field, you can instead enter a list of values, delimited by pipes (|)." />
+    <apex:attribute name="manualDefault" assignTo="{!DefaultValue}" type="string" description="If you're not using a field, you can instead enter a list of values, delimited by pipes (|)." />
+    
+    
+    <apex:attribute name="inline" type="boolean" default="false" description="Whether or not to show the radio buttons inline." />
+    <apex:attribute name="small" type="boolean" default="false" description="Whether or not to use the smaller radio buttons." />
+    
+    
+    <apex:attribute name="destid" type="string" description="The destination apex:inputHidden." />
+        
+    <div class="govuk-radios {!IF(inline, 'govuk-radios--inline', '')} {!IF(small, 'govuk-radios--small', '')}">
+        <apex:variable var="index" value="{!0}" />
+        <apex:repeat value="{!Items}" var="i">
+            <div class="govuk-radios__item">
+                <apex:outputText rendered="{!i.IsDefault}">
+                    <input class="govuk-radios__input sf-govuk-chkbox" id="{!sobject}_{!field}__{!i.Value}" data-dest="{!destid}" name="{!sobject}_{!field}" type="radio" value="{!i.Value}" checked="true" onclick="document.getElementById(this.dataset.dest).value = this.value;" />
+                </apex:outputText>
+                <apex:outputText rendered="{!NOT(i.IsDefault)}">
+                    <input class="govuk-radios__input sf-govuk-chkbox" id="{!sobject}_{!field}__{!i.Value}" data-dest="{!destid}" name="{!sobject}_{!field}" type="radio" value="{!i.Value}" onclick="document.getElementById(this.dataset.dest).value = this.value;" />
+                </apex:outputText>
+                
+                <label class="govuk-label govuk-radios__label" for="{!sobject}_{!field}__{!i.Value}">
+                    {!i.Label}
+                </label>
+            </div>
+        </apex:repeat>
+        
+        <script>     
+        {
+        	let dest = document.getElementById('{!destid}');
+        	if (dest.value != null)
+            {
+                debugger;
+                let tgt = document.getElementById('{!sobject}_{!field}__' + dest.value);
+                tgt.checked = true;
+            }
+        }
+        </script>
+    </div>
+</apex:component>

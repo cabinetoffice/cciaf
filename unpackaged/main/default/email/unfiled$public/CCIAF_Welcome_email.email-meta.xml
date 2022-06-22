@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>CCIAF: Welcome email</name>
+    <style>none</style>
+    <subject>Your request to access the CCIAF scoring tool has been approved.</subject>
+    <textOnly>Hello {!Target_User.FirstName},
+
+Your request to access the CCIAF scoring tool has been approved and you can now login here. Your username is {!Target_User.Username}.
+
+Kind regards,
+
+Government Commercial Group</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>
